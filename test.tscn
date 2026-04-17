@@ -11,6 +11,11 @@ position = Vector2(604, 160)
 scale = Vector2(0.483984, 0.3188188)
 texture = ExtResource("1_37kl0")
 
+[node name="MonkeyThumbsUpCopy" type="Sprite2D" parent="Player/MonkeyThumbsUpCopy" unique_id=325401131]
+position = Vector2(642.5833, 661.8179)
+scale = Vector2(0.483984, 0.3188188)
+texture = ExtResource("1_37kl0")
+
 [node name="Button" type="Button" parent="." unique_id=1960833485]
 offset_left = 171.0
 offset_top = 59.0
