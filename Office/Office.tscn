@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://547x61nh65ld"]
+
+[ext_resource type="Texture2D" uid="uid://m7g718dmj02d" path="res://Office/Concept_art.png" id="1_v23n8"]
+
+[node name="Office" type="Node2D" unique_id=489824311]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825406328]
+texture = ExtResource("1_v23n8")
+centered = false
