@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dj5uoxw6ymla1"]
+
+[ext_resource type="Texture2D" uid="uid://dt7a1o14lgr36" path="res://monkey_thumbs_up - Copy.jpg" id="1_37kl0"]
+
+[node name="Node2D" type="Node2D" unique_id=1405302553]
+
+[node name="Player" type="Area2D" parent="." unique_id=1347907967]
+
+[node name="MonkeyThumbsUpCopy" type="Sprite2D" parent="Player" unique_id=866714186]
+position = Vector2(604, 160)
+scale = Vector2(0.483984, 0.3188188)
+texture = ExtResource("1_37kl0")
+
+[node name="Button" type="Button" parent="." unique_id=1960833485]
+offset_left = 171.0
+offset_top = 59.0
+offset_right = 280.0
+offset_bottom = 142.0
+text = "Yes"
+
+[node name="Button2" type="Button" parent="." unique_id=737677994]
+offset_left = 170.0
+offset_top = 199.0
+offset_right = 279.0
+offset_bottom = 286.0
+text = "NO"
