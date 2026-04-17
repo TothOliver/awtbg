@@ -12,7 +12,7 @@ scale = Vector2(0.483984, 0.3188188)
 texture = ExtResource("1_37kl0")
 
 [node name="MonkeyThumbsUpCopy" type="Sprite2D" parent="Player/MonkeyThumbsUpCopy" unique_id=325401131]
-position = Vector2(642.5833, 661.8179)
+position = Vector2(-10.330872, 765.32495)
 scale = Vector2(0.483984, 0.3188188)
 texture = ExtResource("1_37kl0")
 
