@@ -1,7 +1,7 @@
 extends Control
 @onready var dialogue_panel = $DialoguePanel
 
-var bubble_scene = preload("res://ChatBubble.tscn")
+var bubble_scene = preload("res://Scenes/ChatBubble.tscn")
 	
 func add_message(text: String):
 	var bubble = bubble_scene.instantiate()
