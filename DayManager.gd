@@ -31,7 +31,7 @@ func process_robot(is_good_robot: bool, player_choice_pass: bool):
 		if not is_good_robot:
 			# ADMITTED A BAD AI
 			bad_ai_let_in_count += 1
-			missed_robots_score += 5
+			missed_robots_score += 1
 			print("SECURITY BREACH! Bad AI admitted. Total: ", bad_ai_let_in_count)
 			
 			# Check for Game Over condition
@@ -44,6 +44,7 @@ func process_robot(is_good_robot: bool, player_choice_pass: bool):
 			print("Success! Good robot admitted.")
 	else:
 		if is_good_robot:
+			GameStats.innocent_robots_killed += 1
 			print("Fail! You rejected a perfectly good robot.")
 		else:
 			print("Success! You caught a bad robot.")
