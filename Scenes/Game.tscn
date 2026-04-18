@@ -186,9 +186,10 @@ patch_margin_bottom = 12
 
 [node name="Button1" type="Button" parent="AnswerPanel/VBoxContainer/Option1" unique_id=1764300952]
 layout_mode = 0
-offset_top = -30.0
-offset_right = 512.0
-offset_bottom = 52.0
+offset_left = -3.0
+offset_top = -7.0
+offset_right = 509.0
+offset_bottom = 24.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -217,10 +218,10 @@ patch_margin_bottom = 12
 
 [node name="Button2" type="Button" parent="AnswerPanel/VBoxContainer/Option2" unique_id=1685185524]
 layout_mode = 0
-offset_left = -4.0
-offset_top = -76.0
-offset_right = 508.0
-offset_bottom = 92.0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 507.0
+offset_bottom = 23.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
