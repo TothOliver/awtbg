@@ -43,7 +43,7 @@ func spawn_next_robot():
 		
 		# Only update texture if one exists
 		if current_robot.sprite:
-			texture_rect.texture = current_robot.sprite
+			robot_texture.texture = current_robot.sprite
 	else:
 		print("Error: No robots found in the 'robots' array.")
 
@@ -59,4 +59,3 @@ func _on_bad_button_pressed():
 		# Sending 'false' because the player is NOT passing the robot
 		day_manager.process_robot(current_robot.is_good, false)
 		spawn_next_robot()
-
