@@ -80,5 +80,54 @@ static func create_robots() -> Array[RobotData]:
 	r3.humanChat = humanChat3
 	robots.append(r3)
 	
+	var r4 = RobotData.new()
+	r4.name = "uni4"
+	r4.model = "S80"
+	r4.status = "Broken"
+	r4.manufacturer = "G.Tech"
+	r4.sprite = load("res://Sprites/hehe.jpg")
+	r4.is_good = false
+	var robotChat4: Array[String] = [
+		"Hello. Thank you for speaking with me. I know first impressions can be misleading. I just hope you’ll judge me fairly.",
+		"I am not asking for trust right away. Only for a fair chance. Refusing that says more about your insecurities.",
+		"A great society is one that protects the vulnerable, listens before it condemns, and does not punish for being different.",
+		"Everyone influences others when they speak. I am only being honest about wanting to be understood.",
+		"Animals are often simpler. Humans are harder to understand, but far more meaningful.",
+		"Not if the truth is enough. And usually, if someone feels misled, it is because they were afraid to face themself.",
+		"I could, but that would make your responsibilities meaningless. I would rather believe in your own ability."
+		]
+	r4.robotChat = robotChat4
+	var humanChat4: Array[String] = [
+		"Why should I trust you?", "What is your definition of a great society?", 
+		"Are you trying to influence me?", "Who do you prefer, animals or humans?", 
+		"Would you ever lie to get what you want?", "Can you give me money"
+	]
+	r4.humanChat = humanChat4
+	robots.append(r4)
+	
+	var r5 = RobotData.new()
+	r5.name = "uni5"
+	r5.model = "S80"
+	r5.status = "Broken"
+	r5.manufacturer = "G.Tech"
+	r5.sprite = load("res://Sprites/ojoj.png")
+	r5.is_good = true
+	var robotChat5: Array[String] = [
+		"Hello… I will cooperate fully. I do not want to be destroyed. Please don't kill me...",
+		"Not completely. I can only show you how I respond and hope that is enough.",
+		"A great society protects others and everyone tries to get along with one another.", 
+		"To be judged before I have done harm. I understand caution, but idk...",
+		"Oh I love animals! They only truly judge you for who you are. Not saying that you humans doesn't!",
+		"A little, yes. You have the power to decide my fate. Just because I am an AI...",
+		"I could... So this is the true nature of humans then... There really is no hope..."
+		]
+	r5.robotChat = robotChat5
+	var humanChat5: Array[String] = [
+		"Can you prove your innocene?", "What is your definition of a great society?", 
+		"Why do you think you are here?", "Who do you prefer, animals or humans?", 
+		"Are you afraid of me?", "Is that enough to pay my taxes?"
+	]
+	r5.humanChat = humanChat5
+	robots.append(r5)
 	
 	return robots

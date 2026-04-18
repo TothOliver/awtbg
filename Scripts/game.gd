@@ -33,7 +33,7 @@ func spawn_next_robot():
 	chat_manager.clear_messages()
 	
 	if robots.size() > 0:
-		current_robot = robots.pick_random()
+		current_robot = pick_next_robot()
 		chat_manager.add_message(current_robot.robotChat[0], current_robot.name)
 		
 		chat_button1.text = current_robot.humanChat[chat_manager.chatCount]
@@ -64,6 +64,15 @@ func spawn_next_robot():
 			manuInfo.text = "Unknown"
 	else:
 		print("Error: No robots found in the 'robots' array.")
+		
+func pick_next_robot():
+	if robots.size() <= 1:
+		return current_robot
+	var next_robot = robots.pick_random()	
+	while next_robot == current_robot:
+		next_robot = robots.pick_random()
+	current_robot = next_robot
+	return current_robot
 		
 func handle_chat_choice(player_text: String, robot_reply: String):
 	if is_waiting_for_replay == true:
