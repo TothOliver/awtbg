@@ -59,3 +59,16 @@ func _on_restart_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
+var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
+
+
+
+func _on_restart_mouse_entered() -> void:
+	$NinePatchRect.texture = hover_tex
+	print("Entered")
+
+func _on_restart_mouse_exited() -> void:
+	$NinePatchRect.texture = normal_tex
+	print("Left")
