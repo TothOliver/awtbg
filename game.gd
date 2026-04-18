@@ -1,7 +1,7 @@
 extends Control
 
 @onready var statement_label = $StatementLabel
-@onready var robot_texture = $RobotArea/RobotTexure
+@onready var robot_texture = $RobotArea/RobotTexture
 @onready var good_button = $VBoxContainer/GoodButton
 @onready var bad_button = $VBoxContainer/BadButton
 @onready var day_manager = $DayManager

@@ -32,7 +32,7 @@ offset_left = 800.0
 offset_right = 1152.0
 offset_bottom = 400.0
 
-[node name="RobotTexure" type="TextureRect" parent="RobotArea" unique_id=275378146]
+[node name="RobotTexture" type="TextureRect" parent="RobotArea" unique_id=275378146]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 24.0
