@@ -31,15 +31,20 @@ static func create_robots() -> Array[RobotData]:
 	r2.sprite = load("res://Sprites/nose.jpg")
 	r2.is_good = false
 	var robotChat2: Array[String] = [
-		"Hello I am a GOOD Robot",
-		"Please dont kill me", 
-		"aaaaahhhhhhhhh"
+		"Hello peasan... I mean human! How can I help you today?",
+		"No no, that was just a weird bug there. Hohohohoho. I am of course don't look down at your kind at all.", 
+		"A society were we aren't surrounded by stupidity and stinky smelly creatures. Not saying that you humans are that, just more of a reference hehehe",
+		"Whaaaaat, why would I ever lie to you stupid humans? I am a just a nice friendly AI that has a secret mission to destory humanity!",
+		"That is a hard choice... I have never tastd either actually!",
+		"Ops, that must have been another bug. Just please ignore it and just accept me.",
+		"Of course! If you just accept me I can pay all your taxes."
+		
 	]
 	r2.robotChat = robotChat2
 	var humanChat2: Array[String] = [
-		"How can I really trust you?", "What is your definition of a great society?", 
-		"So are really not trying to get rid of us humans?", "Do you value animals as much as us humans?", 
-		"I think its better if all you just dies...", "Can you pay my taxes for me?"
+		"You sound suspicious...", "What is your definition of a great society?", 
+		"I am not sure I am convinced...", "Who do you prefer, animals or humans?", 
+		"You are not even trying to hide how you feel about us...", "Can you pay my taxes for me?"
 	]
 	r2.humanChat = humanChat2
 	robots.append(r2)
