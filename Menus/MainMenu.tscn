@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvq7hwhliod3q"]
 
 [ext_resource type="Texture2D" uid="uid://m7g718dmj02d" path="res://Menus/Concept_art.png" id="1_3g7qx"]
-[ext_resource type="Script" uid="uid://d3c64iask50su" path="res://Menus/main_menu.gd" id="1_r8dbq"]
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_r8dbq"]
 [ext_resource type="FontFile" uid="uid://c2bw4bubfo00s" path="res://Menus/GrapeSoda.ttf" id="3_7ihqj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8dbq"]
@@ -56,45 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_r8dbq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=988595701]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -161.0
-offset_top = -77.0
-offset_right = 161.0
-offset_bottom = 177.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 40
-
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=11416290]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_kmrqt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3g7qx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_r8dbq")
-text = "Start Game"
-
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=196206400]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_kmrqt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3g7qx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_r8dbq")
-text = "Quit"
-
 [node name="Title" type="Label" parent="." unique_id=667048265]
 layout_mode = 1
 anchors_preset = 8
@@ -115,5 +76,56 @@ theme_override_font_sizes/font_size = 115
 text = "Aparatus Inspector"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[node name="StartButton" type="Button" parent="." unique_id=11416290]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 489.0
+offset_right = 731.0
+offset_bottom = 596.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmrqt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3g7qx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8dbq")
+text = "Start Evaluation"
+
+[node name="QuitButton" type="Button" parent="." unique_id=196206400]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 579.0
+offset_right = 70.0
+offset_bottom = 638.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmrqt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3g7qx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r8dbq")
+text = "X"
+
+[node name="Label" type="Label" parent="." unique_id=453010544]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.0
+offset_top = -137.0
+offset_right = 321.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello Inspector
+You have been assigned to examine a series of artificial intelligences scheduled for final review. Each subject will be observed through direct conversation and evaluated based on its behavior, reasoning, and emotional responses. Your task is to determine whether each AI should be approved for continued existence or marked for termination. Proceed carefully. Some may be dangerous. Some may only appear to be. It is up to you to ensure that only the trustworthy are accepted."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]
