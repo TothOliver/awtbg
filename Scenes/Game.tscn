@@ -77,21 +77,25 @@ offset_top = 424.0
 offset_right = 776.0
 offset_bottom = 648.0
 
-[node name="Button2" type="Button" parent="AnswerPanel" unique_id=1685185524]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 105.0
-offset_right = 426.0
-offset_bottom = 159.0
-text = "Tell me
-More"
+[node name="VBoxContainer" type="VBoxContainer" parent="AnswerPanel" unique_id=89034213]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Button1" type="Button" parent="AnswerPanel" unique_id=1764300952]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 25.0
-offset_right = 440.0
-offset_bottom = 75.0
+[node name="Button2" type="Button" parent="AnswerPanel/VBoxContainer" unique_id=1685185524]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Tell me
+"
+
+[node name="Button1" type="Button" parent="AnswerPanel/VBoxContainer" unique_id=1764300952]
+layout_mode = 2
+size_flags_vertical = 3
 text = "Ya"
 
 [node name="PlayerStats" type="Panel" parent="." unique_id=938637334]
@@ -204,6 +208,10 @@ flat = true
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
 script = ExtResource("2_xkndl")
 
+[connection signal="pressed" from="AnswerPanel/VBoxContainer/Button2" to="." method="_on_chat_button2_pressed"]
+[connection signal="pressed" from="AnswerPanel/VBoxContainer/Button1" to="." method="_on_chat_button1_pressed"]
+[connection signal="pressed" from="VBoxContainer/GoodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BadButton" to="." method="_on_bad_button_pressed"]
 [connection signal="pressed" from="AnswerPanel/Button2" to="." method="_on_chat_button2_pressed"]
 [connection signal="pressed" from="AnswerPanel/Button1" to="." method="_on_chat_button1_pressed"]
 [connection signal="button_down" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_down"]

@@ -44,7 +44,6 @@ func handle_chat_choice(player_text: String, robot_reply: String):
 	await get_tree().create_timer(2.0).timeout
 	chat_manager.add_message(robot_reply, current_robot.name)
 	is_waiting_for_replay = false
-	print(chat_manager.chatCount)
 	
 	if chat_manager.chatCount == 6:
 		chat_button1.text = ""
@@ -55,8 +54,6 @@ func handle_chat_choice(player_text: String, robot_reply: String):
 	
 
 func _on_chat_button1_pressed():
-	print(current_robot.humanChat.size())
-	print(current_robot.robotChat.size())
 	handle_chat_choice(current_robot.humanChat[0], current_robot.robotChat[1])
 
 func _on_chat_button2_pressed():
