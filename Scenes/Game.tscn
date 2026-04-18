@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lr6ecx4umycn"]
 
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://Scripts/game.gd" id="1_wbfu4"]
+[ext_resource type="Texture2D" uid="uid://b6ousc5vgvsd8" path="res://RetroWindowsGUI/Window_Header.png" id="2_7lihs"]
 [ext_resource type="Texture2D" uid="uid://iajmwylrfdxv" path="res://RetroWindowsGUI/Window_Base.png" id="2_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://dpc3mn20a11aa" path="res://Scenes/ChatManager.tscn" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://Scripts/DayManager.gd" id="2_xkndl"]
@@ -22,24 +23,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wbfu4")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=965011394]
+layout_mode = 0
+offset_left = -51.0
+offset_top = -35.0
+offset_right = 1981.0
+offset_bottom = 1109.0
+color = Color(0, 0.5019608, 0.5019608, 1)
+
 [node name="Background" type="NinePatchRect" parent="." unique_id=506019513]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = 29.0
+offset_right = -22.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_b2bpf")
+texture = ExtResource("2_7lihs")
+region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 12
-patch_margin_top = 12
+patch_margin_top = 26
 patch_margin_right = 12
 patch_margin_bottom = 12
 
 [node name="ButtonPanel" type="NinePatchRect" parent="." unique_id=966110224]
 layout_mode = 1
-offset_left = 1.0
-offset_right = 241.0
-offset_bottom = 400.0
+offset_left = 76.0
+offset_top = 254.0
+offset_right = 316.0
+offset_bottom = 370.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -48,19 +63,24 @@ patch_margin_bottom = 12
 
 [node name="ChatManager" parent="." unique_id=1942021245 instance=ExtResource("2_u44n3")]
 layout_mode = 1
+offset_left = 330.0
+offset_top = 59.0
+offset_right = -545.0
+offset_bottom = -250.0
 
 [node name="DialoguePanel" type="VBoxContainer" parent="ChatManager" unique_id=1209100797]
 layout_mode = 0
-offset_left = 243.0
-offset_top = 1.0
-offset_right = 798.0
-offset_bottom = 396.0
+offset_left = -14.0
+offset_top = 29.0
+offset_right = 249.0
+offset_bottom = 342.0
 
 [node name="RobotArea" type="NinePatchRect" parent="." unique_id=1551997195]
 layout_mode = 0
-offset_left = 800.0
-offset_right = 1152.0
-offset_bottom = 400.0
+offset_left = 830.0
+offset_top = 69.0
+offset_right = 1104.0
+offset_bottom = 377.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -72,15 +92,15 @@ layout_mode = 0
 offset_left = 32.0
 offset_top = 24.0
 offset_right = 320.0
-offset_bottom = 384.0
+offset_bottom = 280.0
 expand_mode = 1
 
 [node name="InfoPanel" type="NinePatchRect" parent="." unique_id=356643237]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 424.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 756.0
+offset_top = 403.0
+offset_right = 1104.0
+offset_bottom = 616.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -185,28 +205,22 @@ text = "Axel"
 
 [node name="AnswerPanel" type="NinePatchRect" parent="." unique_id=131471417]
 layout_mode = 0
-offset_left = 264.0
-offset_top = 424.0
-offset_right = 776.0
-offset_bottom = 648.0
+offset_left = 360.0
+offset_top = 453.0
+offset_right = 712.0
+offset_bottom = 615.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AnswerPanel" unique_id=89034213]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Option1" type="NinePatchRect" parent="AnswerPanel/VBoxContainer" unique_id=1597597857]
-layout_mode = 2
+[node name="Option1" type="NinePatchRect" parent="AnswerPanel" unique_id=1597597857]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 14.0
+offset_right = 337.0
+offset_bottom = 67.0
 size_flags_stretch_ratio = 0.0
 mouse_filter = 1
 texture = ExtResource("3_kldst")
@@ -215,12 +229,12 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Button1" type="Button" parent="AnswerPanel/VBoxContainer/Option1" unique_id=1764300952]
+[node name="Button1" type="Button" parent="AnswerPanel/Option1" unique_id=1764300952]
 layout_mode = 0
-offset_left = -3.0
-offset_top = -7.0
-offset_right = 509.0
-offset_bottom = 24.0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = 309.0
+offset_bottom = 40.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -238,8 +252,12 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 text = "Ya"
 flat = true
 
-[node name="Option2" type="NinePatchRect" parent="AnswerPanel/VBoxContainer" unique_id=737537932]
-layout_mode = 2
+[node name="Option2" type="NinePatchRect" parent="AnswerPanel" unique_id=737537932]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 75.0
+offset_right = 339.0
+offset_bottom = 134.0
 mouse_filter = 1
 texture = ExtResource("3_kldst")
 patch_margin_left = 12
@@ -247,12 +265,12 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Button2" type="Button" parent="AnswerPanel/VBoxContainer/Option2" unique_id=1685185524]
+[node name="Button2" type="Button" parent="AnswerPanel/Option2" unique_id=1685185524]
 layout_mode = 0
-offset_left = -5.0
-offset_top = -8.0
-offset_right = 507.0
-offset_bottom = 23.0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 309.0
+offset_bottom = 45.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -273,9 +291,10 @@ flat = true
 
 [node name="PlayerStats" type="NinePatchRect" parent="." unique_id=1163065888]
 layout_mode = 0
-offset_top = 424.0
-offset_right = 240.0
-offset_bottom = 648.0
+offset_left = 76.0
+offset_top = 391.0
+offset_right = 316.0
+offset_bottom = 615.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -316,10 +335,10 @@ offset_bottom = 131.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1375809970]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 64.0
-offset_right = 222.0
-offset_bottom = 283.0
+offset_left = 91.0
+offset_top = 284.0
+offset_right = 297.0
+offset_bottom = 352.0
 
 [node name="Good" type="NinePatchRect" parent="VBoxContainer" unique_id=1488520394]
 layout_mode = 2
@@ -388,16 +407,16 @@ flat = true
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
 script = ExtResource("2_xkndl")
 
-[connection signal="button_down" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_button_down"]
-[connection signal="button_up" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_button_up"]
-[connection signal="mouse_entered" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_mouse_entered"]
-[connection signal="mouse_exited" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_mouse_exited"]
-[connection signal="pressed" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_chat_button1_pressed"]
-[connection signal="button_down" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_button_down"]
-[connection signal="button_up" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_button_up"]
-[connection signal="mouse_entered" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_mouse_entered"]
-[connection signal="mouse_exited" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_mouse_exited"]
-[connection signal="pressed" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_chat_button2_pressed"]
+[connection signal="button_down" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_button_down"]
+[connection signal="button_up" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="mouse_entered" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_mouse_entered"]
+[connection signal="mouse_exited" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_mouse_exited"]
+[connection signal="pressed" from="AnswerPanel/Option1/Button1" to="." method="_on_chat_button1_pressed"]
+[connection signal="button_down" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_up" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="mouse_entered" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_mouse_exited"]
+[connection signal="pressed" from="AnswerPanel/Option2/Button2" to="." method="_on_chat_button2_pressed"]
 [connection signal="button_down" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_down"]
 [connection signal="button_up" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_entered"]
