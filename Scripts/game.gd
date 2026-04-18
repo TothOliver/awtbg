@@ -1,9 +1,10 @@
 extends Control
 
 @onready var robot_texture = $RobotArea/RobotTexture
-@onready var good_button = $ButtonPanel/VBoxContainer/GoodButton
-@onready var bad_button = $ButtonPanel/VBoxContainer/BadButton
+@onready var good_button = $VBoxContainer/GoodButton
+@onready var bad_button = $VBoxContainer/BadButton
 @onready var chat_button1 = $AnswerPanel/Button1
+@onready var chat_button2 = $AnswerPanel/Button2
 @onready var day_manager = $DayManager
 @onready var chat_manager = $ChatManager
 @onready var health_bar = $PlayerStats/HealthBar
@@ -23,23 +24,43 @@ func spawn_next_robot():
 	
 	if robots.size() > 0:
 		current_robot = robots.pick_random()
-		chat_manager.add_message(current_robot.dialogs1, current_robot.name)
+		chat_manager.add_message(current_robot.robotChat[0], current_robot.name)
+		
+		chat_button1.text = current_robot.humanChat[chat_manager.chatCount]
+		chat_button2.text = current_robot.humanChat[chat_manager.chatCount+1]
 		
 		# Only update texture if one exists
 		if current_robot.sprite:
 			robot_texture.texture = current_robot.sprite
 	else:
 		print("Error: No robots found in the 'robots' array.")
-
-func _on_chat_button1_pressed():
+		
+func handle_chat_choice(player_text: String, robot_reply: String):
 	if chat_manager.chatCount > 5 or is_waiting_for_replay == true:
 		return
 	is_waiting_for_replay = true
 	
-	chat_manager.add_message("Hello robot", "You")
+	chat_manager.add_message(player_text, "You")
 	await get_tree().create_timer(2.0).timeout
-	chat_manager.add_message(current_robot.dialogs2, current_robot.name)
+	chat_manager.add_message(robot_reply, current_robot.name)
 	is_waiting_for_replay = false
+	print(chat_manager.chatCount)
+	
+	if chat_manager.chatCount == 6:
+		chat_button1.text = ""
+		chat_button2.text = ""
+	else:
+		chat_button1.text = current_robot.humanChat[chat_manager.chatCount]
+		chat_button2.text = current_robot.humanChat[chat_manager.chatCount+1]
+	
+
+func _on_chat_button1_pressed():
+	print(current_robot.humanChat.size())
+	print(current_robot.robotChat.size())
+	handle_chat_choice(current_robot.humanChat[0], current_robot.robotChat[1])
+
+func _on_chat_button2_pressed():
+	handle_chat_choice(current_robot.humanChat[1], current_robot.robotChat[2])
 
 func _on_good_button_pressed():
 	print("Button Pressed: GOOD (Pass)")
