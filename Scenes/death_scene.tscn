@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ihp42djabd5b"]
 
 [ext_resource type="Script" uid="uid://dcsptgmsc821b" path="res://Scripts/deathScene.gd" id="1_mmcc8"]
+[ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="2_1s3mq"]
+
+[sub_resource type="Theme" id="Theme_1s3mq"]
 
 [node name="Control" type="Control" unique_id=748163525]
 layout_mode = 3
@@ -30,18 +33,10 @@ text = "You are incredibly ded"
 
 [node name="StatsLabel" type="Label" parent="." unique_id=1048202957]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 147.0
-offset_right = 527.0
-offset_bottom = 434.0
-
-[node name="Restart" type="Button" parent="." unique_id=1857837205]
-layout_mode = 0
-offset_left = 271.0
-offset_top = 511.0
-offset_right = 537.0
-offset_bottom = 576.0
-text = "REstart"
+offset_left = 208.0
+offset_top = 80.0
+offset_right = 521.0
+offset_bottom = 367.0
 
 [node name="Quit" type="Button" parent="." unique_id=1949374945]
 layout_mode = 0
@@ -52,5 +47,28 @@ offset_bottom = 577.0
 text = "Quit
 "
 
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=227870550]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 509.0
+offset_right = 390.0
+offset_bottom = 544.0
+texture = ExtResource("2_1s3mq")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Restart" type="Button" parent="NinePatchRect" unique_id=1857837205]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 121.0
+offset_bottom = 33.0
+theme = SubResource("Theme_1s3mq")
+theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+text = "REstart"
+flat = true
+
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="NinePatchRect/Restart" to="." method="_on_restart_pressed"]
