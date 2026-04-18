@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d3a2dpn73wx63"]
+
+[ext_resource type="Script" uid="uid://cdcrbk3k45oct" path="res://Scripts/ChatBubble.gd" id="1_46vr1"]
+
+[node name="ChatBubble" type="Control" unique_id=1477853583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_46vr1")
+
+[node name="Label" type="Label" parent="." unique_id=1411707274]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
