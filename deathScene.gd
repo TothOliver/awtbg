@@ -9,7 +9,7 @@ func _ready():
 
 
 func display_stats():
-	var score = GameStats.final_missed_score
+	var score = GameStats.bad_robots_terminated + GameStats.good_robots_through - GameStats.innocent_robots_killed
 	var breaches = GameStats.total_security_breaches
 	var innocents = GameStats.innocent_robots_killed # Get the new stat
 	
