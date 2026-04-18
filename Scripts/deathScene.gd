@@ -67,8 +67,18 @@ var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
 
 func _on_restart_mouse_entered() -> void:
 	$NinePatchRect.texture = hover_tex
-	print("Entered")
+
 
 func _on_restart_mouse_exited() -> void:
 	$NinePatchRect.texture = normal_tex
-	print("Left")
+
+
+
+
+func _on_quit_mouse_entered() -> void:
+	$QuitRect.texture = hover_tex
+
+
+
+func _on_quit_mouse_exited() -> void:
+	$QuitRect.texture = normal_tex
