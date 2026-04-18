@@ -8,14 +8,22 @@ func _ready():
 	display_stats()
 
 
+# Scripts/deathScene.gd
+
 func display_stats():
-	var score = GameStats.final_missed_score
+	# This 'score' variable is what was likely breaking your display logic
+	var calculated_score = GameStats.bad_robots_terminated + GameStats.good_robots_through - GameStats.innocent_robots_killed
+	
+	# These are the raw numbers you actually want to show
+	var terminated = GameStats.bad_robots_terminated 
 	var breaches = GameStats.total_security_breaches
-	var innocents = GameStats.innocent_robots_killed # Get the new stat
+	var innocents = GameStats.innocent_robots_killed
 	
-	var grade = calculate_grade(score)
+	# Get the grade based on your actual performance score
+	var grade = calculate_grade(calculated_score)
 	
-	stats_label.text = "Bad robots EXTERMINATED: " + str(score)
+	# FIX: Ensure you are using 'terminated' here, NOT 'score'
+	stats_label.text = "Bad robots EXTERMINATED: " + str(terminated) 
 	stats_label.text += "\nTOTAL BREACHES: " + str(breaches)
 	stats_label.text += "\nINNOCENTS TERMINATED: " + str(innocents)
 	stats_label.text += "\nPERFORMANCE GRADE: " + grade
@@ -38,8 +46,10 @@ func calculate_grade(score: int) -> String:
 	else:
 		return "F"
 
+# In Scripts/deathScene.gd
 func _on_restart_pressed():
 	GameStats.final_missed_score = 0
 	GameStats.total_security_breaches = 0
-	GameStats.innocent_robots_killed = 0 # Reset here
+	GameStats.innocent_robots_killed = 0
+	GameStats.bad_robots_terminated = 0 # Reset this!
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")

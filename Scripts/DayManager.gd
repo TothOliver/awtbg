@@ -10,6 +10,7 @@ var max_days: int = 3
 
 # BAD AI let in
 var bad_ai_let_in_count: int = 0
+var bad_ai_killed: int = 0
 const MAX_ALLOWED_BAD_AI = 2
 
 # Day Configurations: [Quota, Difficulty Level]
@@ -31,7 +32,6 @@ func process_robot(is_good_robot: bool, player_choice_pass: bool):
 		if not is_good_robot:
 			# ADMITTED A BAD AI
 			bad_ai_let_in_count += 1
-			missed_robots_score += 1
 			print("SECURITY BREACH! Bad AI admitted. Total: ", bad_ai_let_in_count)
 			
 			# Check for Game Over condition
@@ -42,24 +42,26 @@ func process_robot(is_good_robot: bool, player_choice_pass: bool):
 			print("Fail! You let a bad robot in.")
 		else:
 			print("Success! Good robot admitted.")
+			GameStats.good_robots_through += 1
 	else:
 		if is_good_robot:
 			GameStats.innocent_robots_killed += 1
 			print("Fail! You rejected a perfectly good robot.")
 		else:
 			print("Success! You caught a bad robot.")
+			bad_ai_killed += 1
 	
 	processed_today += 1
 	check_quota_progress()
 
 func game_over_death():
-	# 1. Save current stats to the Global Autoload
-	GameStats.final_missed_score = missed_robots_score
-	GameStats.total_security_breaches = bad_ai_let_in_count # From your new counter
+	# Save the count of bad robots allowed through
+	GameStats.total_security_breaches = bad_ai_let_in_count 
+	GameStats.bad_robots_terminated = bad_ai_killed
+	# IMPORTANT: Ensure bad_robots_terminated was already incremented 
+	# in your process_robot logic when you hit "Exterminate" on a bad robot!
 	
 	print("YOU DIE")
-	
-	# 2. Change the scene
 	get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")
 
 func check_quota_progress():
