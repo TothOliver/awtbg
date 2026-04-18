@@ -53,11 +53,6 @@ func handle_chat_choice(player_text: String, robot_reply: String):
 		chat_button2.text = current_robot.humanChat[chat_manager.chatCount+1]
 	
 
-func _on_chat_button1_pressed():
-	handle_chat_choice(current_robot.humanChat[0], current_robot.robotChat[1])
-
-func _on_chat_button2_pressed():
-	handle_chat_choice(current_robot.humanChat[1], current_robot.robotChat[2])
 
 
 
@@ -101,3 +96,39 @@ func _on_bad_button_mouse_entered() -> void:
 
 func _on_bad_button_mouse_exited() -> void:
 	$VBoxContainer/Bad.texture = normal_tex
+
+
+func _on_button_1_button_down() -> void:
+	$AnswerPanel/VBoxContainer/Option1.texture = pressed_tex
+
+
+func _on_button_1_button_up() -> void:
+	$AnswerPanel/VBoxContainer/Option1.texture = normal_tex
+	handle_chat_choice(current_robot.humanChat[0], current_robot.robotChat[1])
+
+func _on_button_1_mouse_entered() -> void:
+	$AnswerPanel/VBoxContainer/Option1.texture = hover_tex
+
+
+func _on_button_1_mouse_exited() -> void:
+	$AnswerPanel/VBoxContainer/Option1.texture = normal_tex
+
+
+func _on_button_2_button_down() -> void:
+	$AnswerPanel/VBoxContainer/Option2.texture = pressed_tex
+
+
+func _on_button_2_button_up() -> void:
+	$AnswerPanel/VBoxContainer/Option2.texture = normal_tex
+	handle_chat_choice(current_robot.humanChat[1], current_robot.robotChat[2])
+
+
+
+
+func _on_button_2_mouse_entered() -> void:
+	$AnswerPanel/VBoxContainer/Option2.texture = hover_tex
+
+
+
+func _on_button_2_mouse_exited() -> void:
+		$AnswerPanel/VBoxContainer/Option2.texture = normal_tex

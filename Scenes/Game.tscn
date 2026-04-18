@@ -87,16 +87,69 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Button2" type="Button" parent="AnswerPanel/VBoxContainer" unique_id=1685185524]
+[node name="Option1" type="NinePatchRect" parent="AnswerPanel/VBoxContainer" unique_id=1597597857]
 layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Button1" type="Button" parent="AnswerPanel/VBoxContainer/Option1" unique_id=1764300952]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 512.0
+offset_bottom = 52.0
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "Ya"
+flat = true
+
+[node name="Option2" type="NinePatchRect" parent="AnswerPanel/VBoxContainer" unique_id=737537932]
+layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Button2" type="Button" parent="AnswerPanel/VBoxContainer/Option2" unique_id=1685185524]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -76.0
+offset_right = 508.0
+offset_bottom = 92.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 text = "Tell me
 "
-
-[node name="Button1" type="Button" parent="AnswerPanel/VBoxContainer" unique_id=1764300952]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Ya"
+flat = true
 
 [node name="PlayerStats" type="Panel" parent="." unique_id=938637334]
 layout_mode = 0
@@ -208,8 +261,16 @@ flat = true
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
 script = ExtResource("2_xkndl")
 
-[connection signal="pressed" from="AnswerPanel/VBoxContainer/Button2" to="." method="_on_chat_button2_pressed"]
-[connection signal="pressed" from="AnswerPanel/VBoxContainer/Button1" to="." method="_on_chat_button1_pressed"]
+[connection signal="button_down" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_button_down"]
+[connection signal="button_up" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="mouse_entered" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_mouse_entered"]
+[connection signal="mouse_exited" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_mouse_exited"]
+[connection signal="pressed" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_chat_button1_pressed"]
+[connection signal="button_down" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_up" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="mouse_entered" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_mouse_exited"]
+[connection signal="pressed" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_chat_button2_pressed"]
 [connection signal="button_down" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_down"]
 [connection signal="button_up" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_up"]
 [connection signal="mouse_entered" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_entered"]
