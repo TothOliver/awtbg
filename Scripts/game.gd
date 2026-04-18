@@ -1,11 +1,9 @@
 extends Control
 
-@onready var statement_label = $StatementLabel
 @onready var robot_texture = $RobotArea/RobotTexture
 @onready var good_button = $VBoxContainer/GoodButton
 @onready var bad_button = $VBoxContainer/BadButton
 @onready var day_manager = $DayManager
-
 @onready var chat_manager = $ChatManager
 
 # You need to define the array and the variable to hold the current robot
@@ -13,32 +11,15 @@ var robots: Array[RobotData] = []
 var current_robot: RobotData
 
 func _ready():
-	createRobots()
+	robots = RobotFactory.create_robots()
 	spawn_next_robot()
-
-func createRobots():
-	var r1 = RobotData.new()
-	r1.name = "uni1"
-	r1.sprite = load("res://Sprites/monkey.jpg")
-	r1.is_good = false
-	r1.dialogs = "Hello I am a BAD Robot"
-	
-
-	var r2 = RobotData.new()
-	r2.name = "uni2"
-	r2.sprite = load("res://Sprites/monkey.jpg")
-	r2.is_good = true
-	r2.dialogs = "Hello I am a GOOD Robot"
-	
-	robots = [r1, r2]
 
 func spawn_next_robot():
 	chat_manager.clear_messages()
 	
 	if robots.size() > 0:
 		current_robot = robots.pick_random()
-		chat_manager.add_message(current_robot.dialogs)
-		#statement_label.text = current_robot.dialogs
+		chat_manager.add_message(current_robot.dialogs1)
 		
 		# Only update texture if one exists
 		if current_robot.sprite:

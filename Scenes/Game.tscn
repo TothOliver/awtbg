@@ -75,6 +75,17 @@ offset_top = 424.0
 offset_right = 776.0
 offset_bottom = 648.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="AnswerPanel" unique_id=1979108424]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="AnswerPanel/HBoxContainer" unique_id=557691979]
+layout_mode = 2
+
 [node name="PlayerStats" type="Panel" parent="." unique_id=938637334]
 layout_mode = 0
 offset_top = 424.0
@@ -104,14 +115,6 @@ text = "ACCEPT"
 [node name="BadButton" type="Button" parent="VBoxContainer" unique_id=956657047]
 layout_mode = 2
 text = "EXTERMINATE"
-
-[node name="StatementLabel" type="Label" parent="." unique_id=1387565281]
-layout_mode = 0
-offset_left = 538.0
-offset_top = 304.0
-offset_right = 728.0
-offset_bottom = 330.0
-text = "Hello I am a good robot"
 
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
 script = ExtResource("2_xkndl")

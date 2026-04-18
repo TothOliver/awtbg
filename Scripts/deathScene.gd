@@ -50,6 +50,8 @@ func calculate_grade(score: int) -> String:
 func _on_restart_pressed():
 	GameStats.final_missed_score = 0
 	GameStats.total_security_breaches = 0
+	GameStats.innocent_robots_killed = 0 # Reset here
+	get_tree().change_scene_to_file("res://Scene/Game.tscn")
 	GameStats.innocent_robots_killed = 0
 	GameStats.bad_robots_terminated = 0 # Reset this!
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
