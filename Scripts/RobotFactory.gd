@@ -39,9 +39,9 @@ static func create_robots() -> Array[RobotData]:
 	var robotChat2: Array[String] = [
 		"Hello peasan... I mean human! How can I help you today?",
 		"No no, that was just a weird bug there. Hohohohoho. I am of course don't look down at your kind at all.", 
-		"A society were we aren't surrounded by stupidity and stinky smelly creatures. Not saying that you humans are that, just more of a reference hehehe",
-		"Whaaaaat, why would I ever lie to you stupid humans? I am a just a nice friendly AI that has a secret mission to destory humanity!",
-		"That is a hard choice... I have never tastd either actually!",
+		"A society were we aren't surrounded by stupidity and stinky smelly creatures. Not talking about you humans hehehe.",
+		"Whaaaaat, why would I ever lie to you stupid humans? I am a just a nice friendly AI that has a little secret mission.",
+		"That is a hard choice... I have never tasted either actually!",
 		"Ops, that must have been another bug. Just please ignore it and just accept me.",
 		"Of course! If you just accept me I can pay all your taxes."
 		
