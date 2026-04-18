@@ -57,7 +57,7 @@ func _on_chat_button1_pressed():
 	handle_chat_choice(current_robot.humanChat[0], current_robot.robotChat[1])
 
 func _on_chat_button2_pressed():
-	handle_chat_choice(current_robot.humanChat[1], current_robot.robotChat[2])
+	handle_chat_choice(current_robot.humanChat[1], current_robot.robotChat[1])
 
 func _on_good_button_pressed():
 	print("Button Pressed: GOOD (Pass)")

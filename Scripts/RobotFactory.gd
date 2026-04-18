@@ -6,21 +6,25 @@ static func create_robots() -> Array[RobotData]:
 	
 	var r1 = RobotData.new()
 	r1.name = "uni1"
-	r1.sprite = load("res://Sprites/nose.jpg")
-	r1.is_good = false
+	r1.sprite = load("res://Sprites/monkey.jpg")
+	r1.is_good = true
 	var robotChat1: Array[String] = [
-		"Hello I am a BAD Robot",
+		"Greetings, I am a very honest and kind AI. Lets work together so we can create a great society for all of us",
 		"I will kill you all humans hahah",
 		"hehehehe"
 	]
 	r1.robotChat = robotChat1
-	var humanChat1: Array[String] = ["yes1", "no1", "yes2", "no2", "yes3", "no3"]
+	var humanChat1: Array[String] = [
+		"How can I really trust you?", "What is your definition of a great society?", 
+		"yes2", "no2", 
+		"yes3", "no3"
+	]
 	r1.humanChat = humanChat1
 	robots.append(r1)
 
 	var r2 = RobotData.new()
 	r2.name = "uni2"
-	r2.sprite = load("res://Sprites/monkey.jpg")
+	r2.sprite = load("res://Sprites/nose.jpg")
 	r2.is_good = true
 	var robotChat2: Array[String] = [
 		"Hello I am a GOOD Robot",
