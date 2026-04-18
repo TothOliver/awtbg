@@ -9,6 +9,12 @@ extends Control
 @onready var chat_manager = $ChatManager
 @onready var health_bar = $PlayerStats/HealthBar
 
+#info tab stuff
+@onready var nameInfo = $InfoPanel/NamePanel/NameLabel
+@onready var modelInfo = $InfoPanel/ModelPanel/ModelLabel
+@onready var statusInfo = $InfoPanel/StatusPanel/StatusLabel
+@onready var manuInfo = $InfoPanel/ManuPanel/ManuLabel
+
 # --- FLYTTADE VARIABLAR HIT UPP ---
 var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
 var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
@@ -36,6 +42,11 @@ func spawn_next_robot():
 		# Only update texture if one exists
 		if current_robot.sprite:
 			robot_texture.texture = current_robot.sprite
+		#update inforamtion on the robots
+		if current_robot.name:
+			nameInfo.text = current_robot.name
+		else:
+			nameInfo.text = "Unknown"
 	else:
 		print("Error: No robots found in the 'robots' array.")
 		
