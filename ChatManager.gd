@@ -1,17 +1,13 @@
 extends Control
-@onready var chat_container = $ChatContainer
+@onready var dialogue_panel = $DialoguePanel
 
 var bubble_scene = preload("res://ChatBubble.tscn")
-
-var messages = [
-	{"text": "Hello human, can you please accept me as a good AI"},
-	{"text": "Please dont kill me"}
-]
-
-func _ready():
-	show_message(messages[0])
 	
-func show_message(message_data: Dictionary):
+func add_message(text: String):
 	var bubble = bubble_scene.instantiate()
-	chat_container.add_child(bubble)
-	bubble.set_message(message_data["text"])
+	dialogue_panel.add_child(bubble)
+	bubble.set_message(text)
+
+func clear_messages():
+	for child in dialogue_panel.get_children():
+		child.queue_free()

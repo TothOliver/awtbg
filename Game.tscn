@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lr6ecx4umycn"]
 
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://game.gd" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://dpc3mn20a11aa" path="res://ChatManager.tscn" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://DayManager.gd" id="2_xkndl"]
 
 [node name="Control" type="Control" unique_id=1345712339]
@@ -26,6 +27,15 @@ layout_mode = 1
 offset_right = 240.0
 offset_bottom = 400.0
 
+[node name="ChatManager" parent="." unique_id=1942021245 instance=ExtResource("2_u44n3")]
+layout_mode = 1
+
+[node name="DialoguePanel" type="Panel" parent="ChatManager" unique_id=456277577]
+layout_mode = 0
+offset_left = 264.0
+offset_right = 774.0
+offset_bottom = 400.0
+
 [node name="RobotArea" type="Panel" parent="." unique_id=1446843002]
 layout_mode = 0
 offset_left = 800.0
@@ -39,12 +49,6 @@ offset_top = 24.0
 offset_right = 320.0
 offset_bottom = 384.0
 expand_mode = 1
-
-[node name="DialoguePanel" type="Panel" parent="." unique_id=456277577]
-layout_mode = 0
-offset_left = 264.0
-offset_right = 774.0
-offset_bottom = 400.0
 
 [node name="InfoPanel" type="Panel" parent="." unique_id=1896469977]
 layout_mode = 0
@@ -103,10 +107,10 @@ text = "EXTERMINATE"
 
 [node name="StatementLabel" type="Label" parent="." unique_id=1387565281]
 layout_mode = 0
-offset_left = 272.0
-offset_top = 8.0
-offset_right = 768.0
-offset_bottom = 392.0
+offset_left = 538.0
+offset_top = 304.0
+offset_right = 728.0
+offset_bottom = 330.0
 text = "Hello I am a good robot"
 
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
