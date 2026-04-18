@@ -1,7 +1,7 @@
 extends Control
 
 @onready var statement_label = $StatementLabel
-@onready var robot_texture = $Panel/RobotTexture
+@onready var robot_texture = $RobotArea/RobotTexure
 @onready var good_button = $VBoxContainer/GoodButton
 @onready var bad_button = $VBoxContainer/BadButton
 @onready var day_manager = $DayManager
@@ -17,7 +17,6 @@ func show_robot(robot: RobotData):
 	print(robot.sprite)
 	statement_label.text = robot.dialog1
 	robot_texture.texture = robot.sprite
-	print(robot.sprite)
 
 func createRobots():
 	var r1 = RobotData.new()
