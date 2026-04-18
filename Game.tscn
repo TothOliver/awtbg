@@ -2,35 +2,50 @@
 
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://game.gd" id="1_wbfu4"]
 
-[node name="Game" type="Node2D" unique_id=426704976]
+[node name="Control" type="Control" unique_id=1345712339]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_wbfu4")
 
-[node name="Control" type="Control" parent="." unique_id=1766890430]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1526037880]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1375809970]
 layout_mode = 0
-offset_right = 186.0
-offset_bottom = 87.0
+offset_left = 25.0
+offset_top = 189.0
+offset_right = 231.0
+offset_bottom = 408.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=909161290]
-layout_mode = 2
-
-[node name="GoodButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1601679505]
+[node name="GoodButton" type="Button" parent="VBoxContainer" unique_id=809091503]
 layout_mode = 2
 text = "GOOD"
 
-[node name="BadButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=209606056]
+[node name="BadButton" type="Button" parent="VBoxContainer" unique_id=956657047]
 layout_mode = 2
 text = "BAD"
 
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer" unique_id=789636661]
-layout_direction = 2
-layout_mode = 2
+[node name="Panel" type="Panel" parent="." unique_id=456277577]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 6.0
+offset_right = 848.0
+offset_bottom = 397.0
 
-[node name="StatementLabel" type="Label" parent="Control/MarginContainer" unique_id=1395022196]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1298620262]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatementLabel" type="Label" parent="." unique_id=1387565281]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 32.0
+offset_right = 1106.0
+offset_bottom = 375.0
 text = "Hello I am a good robot"

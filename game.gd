@@ -1,9 +1,17 @@
-extends Node2D
+extends Control
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var statement_label = $StatementLabel
+@onready var texture_rect = $Panel/TextureRect
+@onready var good_button = $VBoxContainer/GoodButton
+@onready var bad_button = $VBoxContainer/BadButton
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var robots: Array[RobotData] = []
+
+func _ready():
+	var r1 = RobotData.new()
+	r1.name = "uni1"
+	r1.sprite = null
+	r1.is_good = true
+	r1.dialog1 = "ello world"
+	
+	robots[r1]
