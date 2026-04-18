@@ -6,6 +6,9 @@ static func create_robots() -> Array[RobotData]:
 	
 	var r1 = RobotData.new()
 	r1.name = "uni1"
+	r1.model = "T1337"
+	r1.status = "Faulted"
+	r1.manufacturer = "AgselAB"
 	r1.sprite = load("res://Sprites/monkey.jpg")
 	r1.is_good = true
 	var robotChat1: Array[String] = [
@@ -24,6 +27,9 @@ static func create_robots() -> Array[RobotData]:
 
 	var r2 = RobotData.new()
 	r2.name = "uni2"
+	r2.model = "H.A.R.O.L.D"
+	r2.status = "Whole"
+	r2.manufacturer = "E.V.I.L corp"
 	r2.sprite = load("res://Sprites/nose.jpg")
 	r2.is_good = true
 	var robotChat2: Array[String] = [
@@ -38,6 +44,9 @@ static func create_robots() -> Array[RobotData]:
 	
 	var r3 = RobotData.new()
 	r3.name = "uni2"
+	r3.model = "S80"
+	r3.status = "Broken"
+	r3.manufacturer = "G.Tech"
 	r3.sprite = load("res://Sprites/think.jpg")
 	r3.is_good = true
 	var robotChat3: Array[String] = [

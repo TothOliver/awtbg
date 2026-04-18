@@ -47,6 +47,21 @@ func spawn_next_robot():
 			nameInfo.text = current_robot.name
 		else:
 			nameInfo.text = "Unknown"
+		
+		if current_robot.model:
+			modelInfo.text = current_robot.model
+		else:
+			modelInfo.text = "Unknown"
+		
+		if current_robot.status:
+			statusInfo.text = current_robot.status
+		else:
+			statusInfo.text = "Unknown"
+		
+		if current_robot.manufacturer:
+			manuInfo.text = current_robot.manufacturer
+		else:
+			manuInfo.text = "Unknown"
 	else:
 		print("Error: No robots found in the 'robots' array.")
 		
