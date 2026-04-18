@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kldst"]
-bg_color = Color(0.9, 0.9, 0.9, 1)
+bg_color = Color(0.10374371, 0.103743486, 0.10374334, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Control" type="Control" unique_id=1345712339]
 layout_mode = 3
@@ -80,10 +84,10 @@ text = "Name:"
 
 [node name="NameLabel" type="Label" parent="InfoPanel/NamePanel" unique_id=2063255729]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 5.0
+offset_left = 64.0
+offset_top = 2.0
 offset_right = 304.0
-offset_bottom = 31.999966
+offset_bottom = 26.999966
 text = "Johnny"
 
 [node name="ModelPanel" type="Panel" parent="InfoPanel" unique_id=2041964042]
@@ -104,10 +108,10 @@ text = "Model:"
 
 [node name="NameLabel" type="Label" parent="InfoPanel/ModelPanel" unique_id=303726268]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 6.0
+offset_left = 64.0
+offset_top = 4.0
 offset_right = 304.0
-offset_bottom = 32.999966
+offset_bottom = 30.999966
 text = "T1337"
 
 [node name="StatusPanel" type="Panel" parent="InfoPanel" unique_id=1015063183]
@@ -129,9 +133,9 @@ text = "Status:"
 [node name="NameLabel" type="Label" parent="InfoPanel/StatusPanel" unique_id=958371121]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 6.0
+offset_top = 4.0
 offset_right = 304.0
-offset_bottom = 31.999966
+offset_bottom = 29.999966
 text = "Broken"
 
 [node name="ManuPanel" type="Panel" parent="InfoPanel" unique_id=566703700]
@@ -152,10 +156,10 @@ text = "Manufacturer:"
 
 [node name="NameLabel" type="Label" parent="InfoPanel/ManuPanel" unique_id=1969003573]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 5.0
+offset_left = 124.0
+offset_top = 2.0
 offset_right = 304.0
-offset_bottom = 31.999966
+offset_bottom = 28.999966
 text = "Axel"
 
 [node name="AnswerPanel" type="Panel" parent="." unique_id=820871369]
