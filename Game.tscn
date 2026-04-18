@@ -62,11 +62,6 @@ text = "EXTERMINATE"
 
 [node name="StatementLabel" type="Label" parent="." unique_id=1387565281]
 layout_mode = 0
-offset_left = 875.0
-offset_top = 32.0
-offset_right = 1106.0
-offset_bottom = 375.0
-text = "Statement Dialog"
 offset_left = 272.0
 offset_top = 8.0
 offset_right = 768.0
