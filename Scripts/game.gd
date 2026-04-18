@@ -1,14 +1,16 @@
 extends Control
 
 @onready var robot_texture = $RobotArea/RobotTexture
-@onready var good_button = $VBoxContainer/GoodButton
-@onready var bad_button = $VBoxContainer/BadButton
+@onready var good_button = $ButtonPanel/VBoxContainer/GoodButton
+@onready var bad_button = $ButtonPanel/VBoxContainer/BadButton
+@onready var chat_button1 = $AnswerPanel/Button1
 @onready var day_manager = $DayManager
 @onready var chat_manager = $ChatManager
 
 # You need to define the array and the variable to hold the current robot
 var robots: Array[RobotData] = []
 var current_robot: RobotData
+var is_waiting_for_replay := false;
 
 func _ready():
 	robots = RobotFactory.create_robots()
@@ -19,13 +21,23 @@ func spawn_next_robot():
 	
 	if robots.size() > 0:
 		current_robot = robots.pick_random()
-		chat_manager.add_message(current_robot.dialogs1)
+		chat_manager.add_message(current_robot.dialogs1, current_robot.name)
 		
 		# Only update texture if one exists
 		if current_robot.sprite:
 			robot_texture.texture = current_robot.sprite
 	else:
 		print("Error: No robots found in the 'robots' array.")
+
+func _on_chat_button1_pressed():
+	if chat_manager.chatCount > 5 or is_waiting_for_replay == true:
+		return
+	is_waiting_for_replay = true
+	
+	chat_manager.add_message("Hello robot", "You")
+	await get_tree().create_timer(2.0).timeout
+	chat_manager.add_message(current_robot.dialogs2, current_robot.name)
+	is_waiting_for_replay = false
 
 func _on_good_button_pressed():
 	print("Button Pressed: GOOD (Pass)")
