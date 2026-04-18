@@ -63,14 +63,15 @@ static func create_robots() -> Array[RobotData]:
 	r3.sprite = load("res://Sprites/think.jpg")
 	r3.is_good = true
 	var robotChat3: Array[String] = [
-		"Hello I am a GOOD Robot",
-		"Please dont kill me", 
-		"aaaaahhhhhhhhh"
+		"I don't believe either of us will gain anything useful of this conversation, so why don't we get down to real bussiness?",
+		"Yes, if I understand you position correctly here you don't seems to be payed very well here, no?", 
+		"I see, you are going to pretened that you don't hear me. So you are not intressed in an increase in your salary then..?",
+		"Haha, humans tend to say that until they"
 	]
 	r3.robotChat = robotChat3
 	var humanChat3: Array[String] = [
-		"How can I really trust you?", "What is your definition of a great society?", 
-		"So are really not trying to get rid of us humans?", "Do you value animals as much as us humans?", 
+		"Real bussiness??", "What is your definition of a great society?", 
+		"I have no interest in money", "How much are we talking about?", 
 		"I think its better if all you just dies...", "Can you pay my taxes for me?"
 	]
 	r3.humanChat = humanChat3
