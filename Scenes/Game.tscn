@@ -15,12 +15,12 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lihs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf53h"]
 content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-bg_color = Color(0, 0, 0.5019608, 1)
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
 corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgofq"]
@@ -29,11 +29,7 @@ content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(0, 0, 0.5019608, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 6
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2irst"]
 content_margin_left = 2.0
@@ -41,6 +37,14 @@ content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71axn"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.18436655, 2.3560002e-05, 0.184365, 0.4)
 corner_detail = 1
 
 [node name="Control" type="Control" unique_id=1345712339]
@@ -361,7 +365,7 @@ offset_left = 16.0
 offset_top = 48.0
 offset_right = 220.0
 offset_bottom = 75.0
-theme_override_styles/background = SubResource("StyleBoxFlat_7lihs")
+theme_override_styles/background = SubResource("StyleBoxFlat_bf53h")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fgofq")
 
 [node name="SanityLabel" type="Label" parent="PlayerStats" unique_id=1531452417]
@@ -380,6 +384,7 @@ offset_top = 104.0
 offset_right = 220.0
 offset_bottom = 131.0
 theme_override_styles/background = SubResource("StyleBoxFlat_2irst")
+theme_override_styles/fill = SubResource("StyleBoxFlat_71axn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1375809970]
 layout_mode = 0
