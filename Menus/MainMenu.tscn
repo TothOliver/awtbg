@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://m7g718dmj02d" path="res://Menus/Concept_art.png" id="1_3g7qx"]
 [ext_resource type="Script" uid="uid://d3c64iask50su" path="res://Menus/main_menu.gd" id="1_r8dbq"]
+[ext_resource type="FontFile" uid="uid://c2bw4bubfo00s" path="res://Menus/GrapeSoda.ttf" id="3_7ihqj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8dbq"]
 texture = ExtResource("1_3g7qx")
@@ -109,7 +110,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.26666668, 0.62352943, 0, 1)
 theme_override_constants/outline_size = 11
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("3_7ihqj")
+theme_override_font_sizes/font_size = 115
 text = "Aparatus Inspector"
 horizontal_alignment = 1
 
