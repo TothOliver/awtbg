@@ -3,13 +3,17 @@ extends Control
 @onready var robot_texture = $RobotArea/RobotTexture
 @onready var good_button = $VBoxContainer/Good/GoodButton
 @onready var bad_button = $VBoxContainer/Bad/BadButton
-@onready var chat_button1 = $AnswerPanel/VBoxContainer/Button1
-@onready var chat_button2 = $AnswerPanel/VBoxContainer/Button2
+@onready var chat_button1 = $AnswerPanel/VBoxContainer/Option1/Button1
+@onready var chat_button2 = $AnswerPanel/VBoxContainer/Option2/Button2
 @onready var day_manager = $DayManager
 @onready var chat_manager = $ChatManager
 @onready var health_bar = $PlayerStats/HealthBar
 
-# You need to define the array and the variable to hold the current robot
+# --- FLYTTADE VARIABLAR HIT UPP ---
+var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
+var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
+var pressed_tex = preload("res://RetroWindowsGUI/Windows_Button_Pressed.png")
+
 var robots: Array[RobotData] = []
 var current_robot: RobotData
 var is_waiting_for_replay := false;
@@ -51,12 +55,6 @@ func handle_chat_choice(player_text: String, robot_reply: String):
 	else:
 		chat_button1.text = current_robot.humanChat[chat_manager.chatCount]
 		chat_button2.text = current_robot.humanChat[chat_manager.chatCount+1]
-	
-
-
-var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
-var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
-var pressed_tex = preload("res://RetroWindowsGUI/Windows_Button_Pressed.png")
 
 func _on_good_button_button_down() -> void:
 	$VBoxContainer/Good.texture = pressed_tex
@@ -71,14 +69,11 @@ func _on_good_button_button_up() -> void:
 func _on_good_button_mouse_entered() -> void:
 	$VBoxContainer/Good.texture = hover_tex
 
-
 func _on_good_button_mouse_exited() -> void:
 	$VBoxContainer/Good.texture = normal_tex
 
-
 func _on_bad_button_button_down() -> void:
 	$VBoxContainer/Bad.texture = pressed_tex
-
 
 func _on_bad_button_button_up() -> void:
 	$VBoxContainer/Bad.texture = normal_tex
@@ -91,14 +86,11 @@ func _on_bad_button_button_up() -> void:
 func _on_bad_button_mouse_entered() -> void:
 	$VBoxContainer/Bad.texture = hover_tex
 
-
 func _on_bad_button_mouse_exited() -> void:
 	$VBoxContainer/Bad.texture = normal_tex
 
-
 func _on_button_1_button_down() -> void:
 	$AnswerPanel/VBoxContainer/Option1.texture = pressed_tex
-
 
 func _on_button_1_button_up() -> void:
 	$AnswerPanel/VBoxContainer/Option1.texture = normal_tex
@@ -107,26 +99,18 @@ func _on_button_1_button_up() -> void:
 func _on_button_1_mouse_entered() -> void:
 	$AnswerPanel/VBoxContainer/Option1.texture = hover_tex
 
-
 func _on_button_1_mouse_exited() -> void:
 	$AnswerPanel/VBoxContainer/Option1.texture = normal_tex
 
-
 func _on_button_2_button_down() -> void:
 	$AnswerPanel/VBoxContainer/Option2.texture = pressed_tex
-
 
 func _on_button_2_button_up() -> void:
 	$AnswerPanel/VBoxContainer/Option2.texture = normal_tex
 	handle_chat_choice(current_robot.humanChat[1], current_robot.robotChat[2])
 
-
-
-
 func _on_button_2_mouse_entered() -> void:
 	$AnswerPanel/VBoxContainer/Option2.texture = hover_tex
 
-
-
 func _on_button_2_mouse_exited() -> void:
-		$AnswerPanel/VBoxContainer/Option2.texture = normal_tex
+	$AnswerPanel/VBoxContainer/Option2.texture = normal_tex
