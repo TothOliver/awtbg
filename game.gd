@@ -18,13 +18,13 @@ func show_robot(robot: RobotData):
 	print(robot.sprite)
 	statement_label.text = robot.dialog1
 	robot_texture.texture = robot.sprite
-	print(robot.sprite)
 
 func createRobots():
 	var r1 = RobotData.new()
 	r1.name = "uni1"
 	r1.sprite = load("res://Sprites/monkey.jpg")
-	
+	r1.is_good = true
+	r1.dialog1 = "I am good robot"
 
 	var r2 = RobotData.new()
 	r2.name = "uni2"
