@@ -90,7 +90,7 @@ offset_top = 424.0
 offset_right = 240.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="PlayerStats" unique_id=1207754543]
+[node name="HealthLabel" type="Label" parent="PlayerStats" unique_id=1207754543]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 24.0
@@ -98,14 +98,14 @@ offset_right = 216.0
 offset_bottom = 59.0
 text = "Health:"
 
-[node name="ProgressBar" type="ProgressBar" parent="PlayerStats" unique_id=1602687783]
+[node name="HealthBar" type="ProgressBar" parent="PlayerStats" unique_id=1602687783]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 48.0
 offset_right = 220.0
 offset_bottom = 75.0
 
-[node name="Label2" type="Label" parent="PlayerStats" unique_id=1531452417]
+[node name="SanityLabel" type="Label" parent="PlayerStats" unique_id=1531452417]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 80.0
@@ -113,7 +113,7 @@ offset_right = 216.0
 offset_bottom = 115.0
 text = "Sanity:"
 
-[node name="ProgressBar2" type="ProgressBar" parent="PlayerStats" unique_id=601489287]
+[node name="SanityBar" type="ProgressBar" parent="PlayerStats" unique_id=601489287]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 104.0

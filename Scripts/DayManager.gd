@@ -1,5 +1,7 @@
 extends Node
 
+@onready var health_bar = $"../PlayerStats/HealthBar"
+
 # Scoring
 var missed_robots_score: int = 0
 var processed_today: int = 0
@@ -32,6 +34,7 @@ func process_robot(is_good_robot: bool, player_choice_pass: bool):
 		if not is_good_robot:
 			# ADMITTED A BAD AI
 			bad_ai_let_in_count += 1
+			health_bar.value = health_bar.max_value / (bad_ai_let_in_count + 1)
 			print("SECURITY BREACH! Bad AI admitted. Total: ", bad_ai_let_in_count)
 			
 			# Check for Game Over condition

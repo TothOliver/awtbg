@@ -6,6 +6,7 @@ extends Control
 @onready var chat_button1 = $AnswerPanel/Button1
 @onready var day_manager = $DayManager
 @onready var chat_manager = $ChatManager
+@onready var health_bar = $PlayerStats/HealthBar
 
 # You need to define the array and the variable to hold the current robot
 var robots: Array[RobotData] = []
@@ -15,6 +16,7 @@ var is_waiting_for_replay := false;
 func _ready():
 	robots = RobotFactory.create_robots()
 	spawn_next_robot()
+	health_bar.value = 100
 
 func spawn_next_robot():
 	chat_manager.clear_messages()
