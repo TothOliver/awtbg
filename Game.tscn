@@ -53,3 +53,6 @@ text = "Hello I am a good robot"
 
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
 script = ExtResource("2_xkndl")
+
+[connection signal="pressed" from="VBoxContainer/GoodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BadButton" to="." method="_on_bad_button_pressed"]

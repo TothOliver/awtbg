@@ -23,15 +23,18 @@ func start_new_day():
 	# Trigger your UI to show the new quota here
 
 func process_robot(is_good_robot: bool, player_choice_pass: bool):
-	# LOGIC: If a BAD robot is let in (Passed), score increases by 5
-	if not is_good_robot and player_choice_pass:
-		missed_robots_score += 5
-		print("SECURITY BREACH! Score: ", missed_robots_score)
+	if player_choice_pass:
+		if not is_good_robot:
+			missed_robots_score += 5
+			print("Fail! You let a bad robot in.")
+		else:
+			print("Success! Good robot admitted.")
+	else:
+		if is_good_robot:
+			print("Fail! You rejected a perfectly good robot.")
+		else:
+			print("Success! You caught a bad robot.")
 	
-	# LOGIC: If a GOOD robot is let in, nothing happens (per your request)
-	elif is_good_robot and player_choice_pass:
-		print("Good robot admitted. No score change.")
-
 	processed_today += 1
 	check_quota_progress()
 
@@ -47,3 +50,5 @@ func end_day():
 		start_new_day()
 	else:
 		print("Game Over. Final missed score: ", missed_robots_score)
+		
+		
