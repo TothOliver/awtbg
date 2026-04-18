@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://Scripts/game.gd" id="1_wbfu4"]
 [ext_resource type="PackedScene" uid="uid://dpc3mn20a11aa" path="res://Scenes/ChatManager.tscn" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://Scripts/DayManager.gd" id="2_xkndl"]
+[ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="3_kldst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kldst"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Control" type="Control" unique_id=1345712339]
 layout_mode = 3
@@ -58,16 +66,109 @@ offset_top = 424.0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="InfoPanel" unique_id=766496088]
+[node name="NamePanel" type="Panel" parent="InfoPanel" unique_id=722898887]
 layout_mode = 0
-offset_left = 32.0
+offset_left = 24.0
 offset_top = 24.0
-offset_right = 288.0
-offset_bottom = 88.0
-text = "Name: Johnny
-Model: T1337
-Status: Broken
-Manufacturer: Johan"
+offset_right = 328.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
+
+[node name="StaticNameLabel" type="Label" parent="InfoPanel/NamePanel" unique_id=766496088]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 263.99988
+offset_bottom = 31.999966
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "Name:"
+
+[node name="NameLabel" type="Label" parent="InfoPanel/NamePanel" unique_id=2063255729]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 5.0
+offset_right = 304.0
+offset_bottom = 31.999966
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "Johnny"
+
+[node name="ModelPanel" type="Panel" parent="InfoPanel" unique_id=2041964042]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 72.0
+offset_right = 328.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
+
+[node name="StaticModelLabel" type="Label" parent="InfoPanel/ModelPanel" unique_id=835369628]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 263.99988
+offset_bottom = 31.99997
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "Model:"
+
+[node name="NameLabel" type="Label" parent="InfoPanel/ModelPanel" unique_id=303726268]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 6.0
+offset_right = 304.0
+offset_bottom = 32.999966
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "T1337"
+
+[node name="StatusPanel" type="Panel" parent="InfoPanel" unique_id=1015063183]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 120.0
+offset_right = 328.0
+offset_bottom = 152.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
+
+[node name="StaticStatusLabel" type="Label" parent="InfoPanel/StatusPanel" unique_id=114314964]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 263.99988
+offset_bottom = 31.99997
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "Status:"
+
+[node name="NameLabel" type="Label" parent="InfoPanel/StatusPanel" unique_id=958371121]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 6.0
+offset_right = 304.0
+offset_bottom = 31.999966
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "Broken"
+
+[node name="ManuPanel" type="Panel" parent="InfoPanel" unique_id=566703700]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 328.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
+
+[node name="StaticManuLabel" type="Label" parent="InfoPanel/ManuPanel" unique_id=1674359586]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 263.99988
+offset_bottom = 31.999939
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "Manufacturer:"
+
+[node name="NameLabel" type="Label" parent="InfoPanel/ManuPanel" unique_id=1969003573]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 5.0
+offset_right = 304.0
+offset_bottom = 31.999966
+theme_override_fonts/font = ExtResource("3_kldst")
+text = "Axel"
 
 [node name="AnswerPanel" type="Panel" parent="." unique_id=820871369]
 layout_mode = 0
@@ -109,6 +210,8 @@ offset_left = 16.0
 offset_top = 24.0
 offset_right = 216.0
 offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("3_kldst")
+theme_override_font_sizes/font_size = 18
 text = "Health:"
 
 [node name="HealthBar" type="ProgressBar" parent="PlayerStats" unique_id=1602687783]
@@ -124,6 +227,8 @@ offset_left = 16.0
 offset_top = 80.0
 offset_right = 216.0
 offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("3_kldst")
+theme_override_font_sizes/font_size = 18
 text = "Sanity:"
 
 [node name="SanityBar" type="ProgressBar" parent="PlayerStats" unique_id=601489287]
