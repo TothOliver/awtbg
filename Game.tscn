@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lr6ecx4umycn"]
 
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://game.gd" id="1_wbfu4"]
-[ext_resource type="Script" path="res://DayManager.gd" id="2_xkndl"]
+[ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://DayManager.gd" id="2_xkndl"]
 
 [node name="Control" type="Control" unique_id=1345712339]
 layout_mode = 3
