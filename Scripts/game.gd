@@ -1,8 +1,8 @@
 extends Control
 
 @onready var robot_texture = $RobotArea/RobotTexture
-@onready var good_button = $VBoxContainer/GoodButton
-@onready var bad_button = $VBoxContainer/BadButton
+@onready var good_button = $VBoxContainer/Good/GoodButton
+@onready var bad_button = $VBoxContainer/Bad/BadButton
 @onready var chat_button1 = $AnswerPanel/Button1
 @onready var chat_button2 = $AnswerPanel/Button2
 @onready var day_manager = $DayManager
@@ -62,15 +62,45 @@ func _on_chat_button1_pressed():
 func _on_chat_button2_pressed():
 	handle_chat_choice(current_robot.humanChat[1], current_robot.robotChat[2])
 
-func _on_good_button_pressed():
+
+
+var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
+var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
+var pressed_tex = preload("res://RetroWindowsGUI/Windows_Button_Pressed.png")
+
+func _on_good_button_button_down() -> void:
+	$VBoxContainer/Good.texture = pressed_tex
+
+func _on_good_button_button_up() -> void:
+	$VBoxContainer/Good.texture = normal_tex
 	print("Button Pressed: GOOD (Pass)")
 	if current_robot:
 		day_manager.process_robot(current_robot.is_good, true)
 		spawn_next_robot()
 
-func _on_bad_button_pressed():
+func _on_good_button_mouse_entered() -> void:
+	$VBoxContainer/Good.texture = hover_tex
+
+
+func _on_good_button_mouse_exited() -> void:
+	$VBoxContainer/Good.texture = normal_tex
+
+
+func _on_bad_button_button_down() -> void:
+	$VBoxContainer/Bad.texture = pressed_tex
+
+
+func _on_bad_button_button_up() -> void:
+	$VBoxContainer/Bad.texture = normal_tex
 	print("Button Pressed: BAD (Reject)")
 	if current_robot:
 		# Sending 'false' because the player is NOT passing the robot
 		day_manager.process_robot(current_robot.is_good, false)
 		spawn_next_robot()
+
+func _on_bad_button_mouse_entered() -> void:
+	$VBoxContainer/Bad.texture = hover_tex
+
+
+func _on_bad_button_mouse_exited() -> void:
+	$VBoxContainer/Bad.texture = normal_tex
