@@ -1,7 +1,7 @@
 extends Control
 
 # This connects the Label node to the script
-@onready var stats_label = $StatsLabel 
+@onready var stats_label = $NinePatchRect/StatsLabel
 
 func _ready():
 	# This runs the moment the Death Scene appears on screen
@@ -28,8 +28,6 @@ func display_stats():
 	stats_label.text += "\nINNOCENTS TERMINATED: " + str(innocents)
 	stats_label.text += "\nPERFORMANCE GRADE: " + grade
 	
-	if breaches >= 2:
-		stats_label.text += "\n\nCAUSE OF DEATH: TERMINATED BY SECTOR SECURITY"
 
 func calculate_grade(score: int) -> String:
 	# High score is better (More bad robots exterminated)
@@ -51,7 +49,7 @@ var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
 var pressed_tex = preload("res://RetroWindowsGUI/Windows_Button_Pressed.png")
 # In Scripts/deathScene.gd
 func _on_restart_button_down() -> void:
-	$NinePatchRect.texture = pressed_tex
+	$NinePatchRect/NinePatchRect.texture = pressed_tex
 
 
 func _on_restart_button_up() -> void:
@@ -70,26 +68,26 @@ func _on_restart_button_up() -> void:
 
 
 func _on_restart_mouse_entered() -> void:
-	$NinePatchRect.texture = hover_tex
+	$NinePatchRect/NinePatchRect.texture = hover_tex
 
 
 func _on_restart_mouse_exited() -> void:
-	$NinePatchRect.texture = normal_tex
+	$NinePatchRect/NinePatchRect.texture = normal_tex
 
 
 
 
 func _on_quit_mouse_entered() -> void:
-	$QuitRect.texture = hover_tex
+	$NinePatchRect/QuitRect.texture = hover_tex
 
 
 
 func _on_quit_mouse_exited() -> void:
-	$QuitRect.texture = normal_tex
+	$NinePatchRect/QuitRect.texture = normal_tex
 
 
 func _on_quit_button_down() -> void:
-	$QuitRect.texture = pressed_tex
+	$NinePatchRect/QuitRect.texture = pressed_tex
 
 
 func _on_quit_button_up() -> void:
