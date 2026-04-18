@@ -66,13 +66,17 @@ static func create_robots() -> Array[RobotData]:
 		"I don't believe either of us will gain anything useful of this conversation, so why don't we get down to real bussiness?",
 		"Yes, if I understand you position correctly here you don't seems to be payed very well here, no?", 
 		"I see, you are going to pretened that you don't hear me. So you are not intressed in an increase in your salary then..?",
-		"Haha, humans tend to say that until they"
+		"Haha, humans tends to say that until they have the money ifront right ifront of you. So what do you say, 14$?",
+		"Now we talking. Well since I am an AI and basically have access to an inifet amount of money, how about 7$?",
+		"Damn, haggling are we. Well for you i guess I can pump it up to 3$. I am sure that should satisfy you enough",
+		"With your salary... Propably."
+		
 	]
 	r3.robotChat = robotChat3
 	var humanChat3: Array[String] = [
 		"Real bussiness??", "What is your definition of a great society?", 
 		"I have no interest in money", "How much are we talking about?", 
-		"I think its better if all you just dies...", "Can you pay my taxes for me?"
+		"That is not even close to a reasonable amount...", "Is that enough to pay my taxes?"
 	]
 	r3.humanChat = humanChat3
 	robots.append(r3)
