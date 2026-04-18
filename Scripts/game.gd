@@ -3,8 +3,8 @@ extends Control
 @onready var robot_texture = $RobotArea/RobotTexture
 @onready var good_button = $VBoxContainer/Good/GoodButton
 @onready var bad_button = $VBoxContainer/Bad/BadButton
-@onready var chat_button1 = $AnswerPanel/Button1
-@onready var chat_button2 = $AnswerPanel/Button2
+@onready var chat_button1 = $AnswerPanel/VBoxContainer/Button1
+@onready var chat_button2 = $AnswerPanel/VBoxContainer/Button2
 @onready var day_manager = $DayManager
 @onready var chat_manager = $ChatManager
 @onready var health_bar = $PlayerStats/HealthBar
