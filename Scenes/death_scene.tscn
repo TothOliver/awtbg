@@ -5,6 +5,20 @@
 
 [sub_resource type="Theme" id="Theme_1s3mq"]
 
+[sub_resource type="GDScript" id="GDScript_1s3mq"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Control" type="Control" unique_id=748163525]
 layout_mode = 3
 anchors_preset = 15
@@ -21,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+color = Color(0.7529412, 0.7529412, 0.7529412, 1)
 
 [node name="Title" type="Label" parent="." unique_id=420712760]
 layout_mode = 0
@@ -29,6 +43,7 @@ offset_left = 249.0
 offset_top = 65.0
 offset_right = 874.0
 offset_bottom = 301.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "You are incredibly ded"
 
 [node name="StatsLabel" type="Label" parent="." unique_id=1048202957]
@@ -37,15 +52,7 @@ offset_left = 208.0
 offset_top = 80.0
 offset_right = 521.0
 offset_bottom = 367.0
-
-[node name="Quit" type="Button" parent="." unique_id=1949374945]
-layout_mode = 0
-offset_left = 579.0
-offset_top = 512.0
-offset_right = 845.0
-offset_bottom = 577.0
-text = "Quit
-"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=227870550]
 layout_mode = 0
@@ -55,10 +62,10 @@ offset_right = 390.0
 offset_bottom = 544.0
 mouse_filter = 1
 texture = ExtResource("2_1s3mq")
-patch_margin_left = 2
-patch_margin_top = 2
-patch_margin_right = 2
-patch_margin_bottom = 2
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="Restart" type="Button" parent="NinePatchRect" unique_id=1857837205]
 layout_mode = 0
@@ -68,14 +75,52 @@ offset_right = 121.0
 offset_bottom = 33.0
 theme = SubResource("Theme_1s3mq")
 theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
-text = "REstart"
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+text = "Restart"
 flat = true
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="QuitRect" type="NinePatchRect" parent="." unique_id=2085180627]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 508.0
+offset_right = 641.0
+offset_bottom = 543.0
+mouse_filter = 1
+texture = ExtResource("2_1s3mq")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Quit" type="Button" parent="QuitRect" unique_id=776731121]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 121.0
+offset_bottom = 33.0
+theme = SubResource("Theme_1s3mq")
+theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+text = "Quit"
+flat = true
+script = SubResource("GDScript_1s3mq")
+
 [connection signal="focus_entered" from="NinePatchRect" to="." method="_on_nine_patch_rect_focus_entered"]
 [connection signal="mouse_entered" from="NinePatchRect" to="." method="_on_nine_patch_rect_mouse_entered"]
 [connection signal="mouse_exited" from="NinePatchRect" to="." method="_on_nine_patch_rect_mouse_exited"]
+[connection signal="button_down" from="NinePatchRect/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_up" from="NinePatchRect/Restart" to="." method="_on_restart_button_up"]
 [connection signal="mouse_entered" from="NinePatchRect/Restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="mouse_exited" from="NinePatchRect/Restart" to="." method="_on_restart_mouse_exited"]
-[connection signal="pressed" from="NinePatchRect/Restart" to="." method="_on_restart_pressed"]
+[connection signal="focus_entered" from="QuitRect" to="." method="_on_nine_patch_rect_focus_entered"]
+[connection signal="mouse_exited" from="QuitRect" to="." method="_on_quit_rect_mouse_exited"]
+[connection signal="button_down" from="QuitRect/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="QuitRect/Quit" to="." method="_on_quit_button_up"]
+[connection signal="mouse_entered" from="QuitRect/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="QuitRect/Quit" to="." method="_on_quit_mouse_exited"]

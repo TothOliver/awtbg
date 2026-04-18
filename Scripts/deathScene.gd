@@ -46,8 +46,15 @@ func calculate_grade(score: int) -> String:
 	else:
 		return "F"
 
+var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
+var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
+var pressed_tex = preload("res://RetroWindowsGUI/Windows_Button_Pressed.png")
 # In Scripts/deathScene.gd
-func _on_restart_pressed():
+func _on_restart_button_down() -> void:
+	$NinePatchRect.texture = pressed_tex
+
+
+func _on_restart_button_up() -> void:
 	GameStats.final_missed_score = 0
 	GameStats.total_security_breaches = 0
 	GameStats.innocent_robots_killed = 0 # Reset here
@@ -57,18 +64,33 @@ func _on_restart_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
 
-func _on_quit_pressed():
-	get_tree().quit()
 
-var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
-var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
+
 
 
 
 func _on_restart_mouse_entered() -> void:
 	$NinePatchRect.texture = hover_tex
-	print("Entered")
+
 
 func _on_restart_mouse_exited() -> void:
 	$NinePatchRect.texture = normal_tex
-	print("Left")
+
+
+
+
+func _on_quit_mouse_entered() -> void:
+	$QuitRect.texture = hover_tex
+
+
+
+func _on_quit_mouse_exited() -> void:
+	$QuitRect.texture = normal_tex
+
+
+func _on_quit_button_down() -> void:
+	$QuitRect.texture = pressed_tex
+
+
+func _on_quit_button_up() -> void:
+	get_tree().quit()
