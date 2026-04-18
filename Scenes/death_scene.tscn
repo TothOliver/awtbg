@@ -43,4 +43,14 @@ offset_right = 537.0
 offset_bottom = 576.0
 text = "REstart"
 
+[node name="Quit" type="Button" parent="." unique_id=1949374945]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 512.0
+offset_right = 845.0
+offset_bottom = 577.0
+text = "Quit
+"
+
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
