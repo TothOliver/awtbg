@@ -42,4 +42,4 @@ func _on_restart_pressed():
 	GameStats.final_missed_score = 0
 	GameStats.total_security_breaches = 0
 	GameStats.innocent_robots_killed = 0 # Reset here
-	get_tree().change_scene_to_file("res://Game.tscn")
+	get_tree().change_scene_to_file("res://Scene/Game.tscn")
