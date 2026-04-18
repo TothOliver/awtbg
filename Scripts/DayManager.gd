@@ -5,7 +5,6 @@ extends Node
 # Scoring
 var missed_robots_score: int = 0
 var processed_today: int = 0
-
 # Day Progression
 var current_day: int = 1
 var max_days: int = 3
