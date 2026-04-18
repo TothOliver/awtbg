@@ -49,3 +49,6 @@ offset_top = 32.0
 offset_right = 1106.0
 offset_bottom = 375.0
 text = "Hello I am a good robot"
+
+[node name="DayManager" type="Node" parent="." unique_id=1392718977]
+script = ExtResource("1_wbfu4")
