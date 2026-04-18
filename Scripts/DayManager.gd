@@ -60,7 +60,7 @@ func game_over_death():
 	print("YOU DIE")
 	
 	# 2. Change the scene
-	get_tree().change_scene_to_file("res://death_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/death_scene.tscn")
 
 func check_quota_progress():
 	if processed_today >= day_configs[current_day].quota:
