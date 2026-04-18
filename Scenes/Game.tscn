@@ -3,14 +3,7 @@
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://Scripts/game.gd" id="1_wbfu4"]
 [ext_resource type="PackedScene" uid="uid://dpc3mn20a11aa" path="res://Scenes/ChatManager.tscn" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://Scripts/DayManager.gd" id="2_xkndl"]
-[ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="3_kldst"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kldst"]
-bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
 
 [node name="Control" type="Control" unique_id=1345712339]
 layout_mode = 3
@@ -187,16 +180,69 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Button2" type="Button" parent="AnswerPanel/VBoxContainer" unique_id=1685185524]
+[node name="Option1" type="NinePatchRect" parent="AnswerPanel/VBoxContainer" unique_id=1597597857]
 layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Button1" type="Button" parent="AnswerPanel/VBoxContainer/Option1" unique_id=1764300952]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 512.0
+offset_bottom = 52.0
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "Ya"
+flat = true
+
+[node name="Option2" type="NinePatchRect" parent="AnswerPanel/VBoxContainer" unique_id=737537932]
+layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Button2" type="Button" parent="AnswerPanel/VBoxContainer/Option2" unique_id=1685185524]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -76.0
+offset_right = 508.0
+offset_bottom = 92.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 text = "Tell me
 "
-
-[node name="Button1" type="Button" parent="AnswerPanel/VBoxContainer" unique_id=1764300952]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Ya"
+flat = true
 
 [node name="PlayerStats" type="Panel" parent="." unique_id=938637334]
 layout_mode = 0
@@ -245,20 +291,90 @@ offset_top = 64.0
 offset_right = 222.0
 offset_bottom = 283.0
 
-[node name="GoodButton" type="Button" parent="VBoxContainer" unique_id=809091503]
+[node name="Good" type="NinePatchRect" parent="VBoxContainer" unique_id=1488520394]
 layout_mode = 2
-size_flags_vertical = 3
-text = "ACCEPT"
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="BadButton" type="Button" parent="VBoxContainer" unique_id=956657047]
-layout_mode = 2
+[node name="GoodButton" type="Button" parent="VBoxContainer/Good" unique_id=809091503]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 207.0
+offset_bottom = 28.0
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "ACCEPT"
+flat = true
+
+[node name="Bad" type="NinePatchRect" parent="VBoxContainer" unique_id=609471749]
+layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="BadButton" type="Button" parent="VBoxContainer/Bad" unique_id=956657047]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 202.0
+offset_bottom = 28.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 text = "EXTERMINATE"
+flat = true
 
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
 script = ExtResource("2_xkndl")
 
-[connection signal="pressed" from="AnswerPanel/VBoxContainer/Button2" to="." method="_on_chat_button2_pressed"]
-[connection signal="pressed" from="AnswerPanel/VBoxContainer/Button1" to="." method="_on_chat_button1_pressed"]
-[connection signal="pressed" from="VBoxContainer/GoodButton" to="." method="_on_good_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/BadButton" to="." method="_on_bad_button_pressed"]
+[connection signal="button_down" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_button_down"]
+[connection signal="button_up" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="mouse_entered" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_mouse_entered"]
+[connection signal="mouse_exited" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_button_1_mouse_exited"]
+[connection signal="pressed" from="AnswerPanel/VBoxContainer/Option1/Button1" to="." method="_on_chat_button1_pressed"]
+[connection signal="button_down" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_up" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="mouse_entered" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_button_2_mouse_exited"]
+[connection signal="pressed" from="AnswerPanel/VBoxContainer/Option2/Button2" to="." method="_on_chat_button2_pressed"]
+[connection signal="button_down" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_down"]
+[connection signal="button_up" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_up"]
+[connection signal="mouse_entered" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_button_down"]
+[connection signal="button_up" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_button_up"]
+[connection signal="mouse_entered" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_pressed"]
