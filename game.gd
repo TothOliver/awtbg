@@ -1,7 +1,7 @@
 extends Control
 
 @onready var statement_label = $StatementLabel
-@onready var robot_texture = $RobotArea/RobotTexure
+@onready var robot_texture = $RobotArea/RobotTexture
 @onready var good_button = $VBoxContainer/GoodButton
 @onready var bad_button = $VBoxContainer/BadButton
 @onready var day_manager = $DayManager
@@ -12,10 +12,11 @@ var current_robot: RobotData
 
 func _ready():
 	createRobots()
+	spawn_next_robot()
 
 func show_robot(robot: RobotData):
 	print(robot.sprite)
-	statement_label.text = robot.dialog1
+	statement_label.text = robot.dialogs
 	robot_texture.texture = robot.sprite
 
 func createRobots():
@@ -23,23 +24,21 @@ func createRobots():
 	r1.name = "uni1"
 	r1.sprite = load("res://Sprites/monkey.jpg")
 	r1.is_good = false
-	r1.dialog1 = "I am a BAD robot"
+	r1.dialogs = "Hello I am a BAD Robot"
 	
 
 	var r2 = RobotData.new()
 	r2.name = "uni2"
 	r2.sprite = load("res://Sprites/monkey.jpg")
 	r2.is_good = true
-	r2.dialog1 = "I am a GOOD robot"
+	r2.dialogs = "Hello I am a GOOD Robot"
 	
 	robots = [r1, r2]
-
-	spawn_next_robot()
 
 func spawn_next_robot():
 	if robots.size() > 0:
 		current_robot = robots.pick_random()
-		statement_label.text = current_robot.dialog1
+		statement_label.text = current_robot.dialogs
 		
 		# Only update texture if one exists
 		if current_robot.sprite:

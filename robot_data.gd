@@ -4,4 +4,4 @@ extends Resource
 @export var name: String
 @export var is_good: bool
 @export var sprite: Texture2D
-@export var dialog1: String
+@export var dialogs: String
