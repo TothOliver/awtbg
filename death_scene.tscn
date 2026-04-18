@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bxa22pjhstpdo"]
+
+[ext_resource type="Script" uid="uid://dcsptgmsc821b" path="res://deathScene.gd" id="1_bea04"]
+
+[node name="Control" type="Control" unique_id=748163525]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bea04")
+
+[node name="Background" type="ColorRect" parent="." unique_id=776432097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+
+[node name="Title" type="Label" parent="." unique_id=420712760]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 65.0
+offset_right = 874.0
+offset_bottom = 301.0
+text = "You are incredibly ded"
+
+[node name="StatsLabel" type="Label" parent="." unique_id=1048202957]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 147.0
+offset_right = 527.0
+offset_bottom = 434.0
+
+[node name="Restart" type="Button" parent="." unique_id=1857837205]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 511.0
+offset_right = 537.0
+offset_bottom = 576.0
+text = "REstart"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
