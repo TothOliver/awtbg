@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lr6ecx4umycn"]
 
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://game.gd" id="1_wbfu4"]
+[ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://DayManager.gd" id="2_xkndl"]
 
 [node name="Control" type="Control" unique_id=1345712339]
 layout_mode = 3
@@ -53,3 +54,9 @@ offset_top = 32.0
 offset_right = 1106.0
 offset_bottom = 375.0
 text = "Hello I am a good robot"
+
+[node name="DayManager" type="Node" parent="." unique_id=1392718977]
+script = ExtResource("2_xkndl")
+
+[connection signal="pressed" from="VBoxContainer/GoodButton" to="." method="_on_good_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BadButton" to="." method="_on_bad_button_pressed"]
