@@ -6,6 +6,8 @@ extends Control
 @onready var bad_button = $VBoxContainer/BadButton
 @onready var day_manager = $DayManager
 
+@onready var chat_manager = $ChatManager
+
 # You need to define the array and the variable to hold the current robot
 var robots: Array[RobotData] = []
 var current_robot: RobotData
@@ -13,11 +15,6 @@ var current_robot: RobotData
 func _ready():
 	createRobots()
 	spawn_next_robot()
-
-func show_robot(robot: RobotData):
-	print(robot.sprite)
-	statement_label.text = robot.dialogs
-	robot_texture.texture = robot.sprite
 
 func createRobots():
 	var r1 = RobotData.new()
@@ -36,9 +33,12 @@ func createRobots():
 	robots = [r1, r2]
 
 func spawn_next_robot():
+	chat_manager.clear_messages()
+	
 	if robots.size() > 0:
 		current_robot = robots.pick_random()
-		statement_label.text = current_robot.dialogs
+		chat_manager.add_message(current_robot.dialogs)
+		#statement_label.text = current_robot.dialogs
 		
 		# Only update texture if one exists
 		if current_robot.sprite:
