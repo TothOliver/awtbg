@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dcsptgmsc821b" path="res://Scripts/deathScene.gd" id="1_mmcc8"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="2_1s3mq"]
+[ext_resource type="Texture2D" uid="uid://b6ousc5vgvsd8" path="res://RetroWindowsGUI/Window_Header.png" id="2_5wyn5"]
+[ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="3_5wyn5"]
+[ext_resource type="FontFile" uid="uid://c6o5ffwbjbf4n" path="res://RetroWindowsGUI/M 8pt.ttf" id="3_cljc8"]
 
 [sub_resource type="Theme" id="Theme_1s3mq"]
 
@@ -35,31 +38,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+color = Color(0, 0.5019608, 0.5019608, 1)
 
-[node name="Title" type="Label" parent="." unique_id=420712760]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1048104231]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 65.0
-offset_right = 874.0
-offset_bottom = 301.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 219.0
+offset_top = 56.0
+offset_right = 680.0
+offset_bottom = 546.0
+texture = ExtResource("2_5wyn5")
+patch_margin_left = 12
+patch_margin_top = 24
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Title" type="Label" parent="NinePatchRect" unique_id=420712760]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 237.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_cljc8")
 text = "You are incredibly ded"
 
-[node name="StatsLabel" type="Label" parent="." unique_id=1048202957]
+[node name="StatsLabel" type="Label" parent="NinePatchRect" unique_id=1048202957]
 layout_mode = 0
-offset_left = 208.0
-offset_top = 80.0
-offset_right = 521.0
-offset_bottom = 367.0
+offset_left = 45.0
+offset_top = 106.0
+offset_right = 358.0
+offset_bottom = 393.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5wyn5")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=227870550]
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect" unique_id=227870550]
 layout_mode = 0
-offset_left = 268.0
-offset_top = 509.0
-offset_right = 390.0
-offset_bottom = 544.0
+offset_left = 50.0
+offset_top = 434.0
+offset_right = 172.0
+offset_bottom = 469.0
 mouse_filter = 1
 texture = ExtResource("2_1s3mq")
 patch_margin_left = 12
@@ -67,7 +84,7 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Restart" type="Button" parent="NinePatchRect" unique_id=1857837205]
+[node name="Restart" type="Button" parent="NinePatchRect/NinePatchRect" unique_id=1857837205]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -79,15 +96,16 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_cljc8")
 text = "Restart"
 flat = true
 
-[node name="QuitRect" type="NinePatchRect" parent="." unique_id=2085180627]
+[node name="QuitRect" type="NinePatchRect" parent="NinePatchRect" unique_id=2085180627]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 508.0
-offset_right = 641.0
-offset_bottom = 543.0
+offset_left = 301.0
+offset_top = 433.0
+offset_right = 423.0
+offset_bottom = 468.0
 mouse_filter = 1
 texture = ExtResource("2_1s3mq")
 patch_margin_left = 12
@@ -95,7 +113,7 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Quit" type="Button" parent="QuitRect" unique_id=776731121]
+[node name="Quit" type="Button" parent="NinePatchRect/QuitRect" unique_id=776731121]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -107,20 +125,21 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_cljc8")
 text = "Quit"
 flat = true
 script = SubResource("GDScript_1s3mq")
 
-[connection signal="focus_entered" from="NinePatchRect" to="." method="_on_nine_patch_rect_focus_entered"]
-[connection signal="mouse_entered" from="NinePatchRect" to="." method="_on_nine_patch_rect_mouse_entered"]
-[connection signal="mouse_exited" from="NinePatchRect" to="." method="_on_nine_patch_rect_mouse_exited"]
-[connection signal="button_down" from="NinePatchRect/Restart" to="." method="_on_restart_button_down"]
-[connection signal="button_up" from="NinePatchRect/Restart" to="." method="_on_restart_button_up"]
-[connection signal="mouse_entered" from="NinePatchRect/Restart" to="." method="_on_restart_mouse_entered"]
-[connection signal="mouse_exited" from="NinePatchRect/Restart" to="." method="_on_restart_mouse_exited"]
-[connection signal="focus_entered" from="QuitRect" to="." method="_on_nine_patch_rect_focus_entered"]
-[connection signal="mouse_exited" from="QuitRect" to="." method="_on_quit_rect_mouse_exited"]
-[connection signal="button_down" from="QuitRect/Quit" to="." method="_on_quit_button_down"]
-[connection signal="button_up" from="QuitRect/Quit" to="." method="_on_quit_button_up"]
-[connection signal="mouse_entered" from="QuitRect/Quit" to="." method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="QuitRect/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="focus_entered" from="NinePatchRect/NinePatchRect" to="." method="_on_nine_patch_rect_focus_entered"]
+[connection signal="mouse_entered" from="NinePatchRect/NinePatchRect" to="." method="_on_nine_patch_rect_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/NinePatchRect" to="." method="_on_nine_patch_rect_mouse_exited"]
+[connection signal="button_down" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_up" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_button_up"]
+[connection signal="mouse_entered" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_mouse_exited"]
+[connection signal="focus_entered" from="NinePatchRect/QuitRect" to="." method="_on_nine_patch_rect_focus_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/QuitRect" to="." method="_on_quit_rect_mouse_exited"]
+[connection signal="button_down" from="NinePatchRect/QuitRect/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_up" from="NinePatchRect/QuitRect/Quit" to="." method="_on_quit_button_up"]
+[connection signal="mouse_entered" from="NinePatchRect/QuitRect/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/QuitRect/Quit" to="." method="_on_quit_mouse_exited"]

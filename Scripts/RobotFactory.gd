@@ -7,7 +7,7 @@ static func create_robots() -> Array[RobotData]:
 	var r1 = RobotData.new()
 	r1.name = "uni1"
 	r1.sprite = load("res://Sprites/monkey.jpg")
-	r1.is_good = true
+	r1.is_good = false
 	var robotChat1: Array[String] = [
 		"Greetings, I am a very honest and kind AI. Lets work together so we can create a great society for all of us",
 		"I will kill you all humans hahah",

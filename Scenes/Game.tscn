@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lr6ecx4umycn"]
 
 [ext_resource type="Script" uid="uid://bqkkd4gsbvfer" path="res://Scripts/game.gd" id="1_wbfu4"]
+[ext_resource type="Texture2D" uid="uid://iajmwylrfdxv" path="res://RetroWindowsGUI/Window_Base.png" id="2_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://dpc3mn20a11aa" path="res://Scenes/ChatManager.tscn" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://Scripts/DayManager.gd" id="2_xkndl"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
@@ -21,19 +22,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wbfu4")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1856657644]
+[node name="Background" type="NinePatchRect" parent="." unique_id=506019513]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+texture = ExtResource("2_b2bpf")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="ButtonPanel" type="Panel" parent="." unique_id=1864702288]
+[node name="ButtonPanel" type="NinePatchRect" parent="." unique_id=966110224]
 layout_mode = 1
-offset_right = 240.0
+offset_left = 1.0
+offset_right = 241.0
 offset_bottom = 400.0
+texture = ExtResource("2_b2bpf")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="ChatManager" parent="." unique_id=1942021245 instance=ExtResource("2_u44n3")]
 layout_mode = 1
@@ -45,11 +56,16 @@ offset_top = 1.0
 offset_right = 798.0
 offset_bottom = 396.0
 
-[node name="RobotArea" type="Panel" parent="." unique_id=1446843002]
+[node name="RobotArea" type="NinePatchRect" parent="." unique_id=1551997195]
 layout_mode = 0
 offset_left = 800.0
 offset_right = 1152.0
 offset_bottom = 400.0
+texture = ExtResource("2_b2bpf")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="RobotTexture" type="TextureRect" parent="RobotArea" unique_id=275378146]
 layout_mode = 0
@@ -59,12 +75,17 @@ offset_right = 320.0
 offset_bottom = 384.0
 expand_mode = 1
 
-[node name="InfoPanel" type="Panel" parent="." unique_id=1896469977]
+[node name="InfoPanel" type="NinePatchRect" parent="." unique_id=356643237]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 424.0
 offset_right = 1152.0
 offset_bottom = 648.0
+texture = ExtResource("2_b2bpf")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="NamePanel" type="Panel" parent="InfoPanel" unique_id=722898887]
 layout_mode = 0
@@ -162,12 +183,17 @@ offset_right = 304.0
 offset_bottom = 28.999966
 text = "Axel"
 
-[node name="AnswerPanel" type="Panel" parent="." unique_id=820871369]
+[node name="AnswerPanel" type="NinePatchRect" parent="." unique_id=131471417]
 layout_mode = 0
 offset_left = 264.0
 offset_top = 424.0
 offset_right = 776.0
 offset_bottom = 648.0
+texture = ExtResource("2_b2bpf")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AnswerPanel" unique_id=89034213]
 custom_minimum_size = Vector2(0, 100)
@@ -181,6 +207,7 @@ alignment = 1
 
 [node name="Option1" type="NinePatchRect" parent="AnswerPanel/VBoxContainer" unique_id=1597597857]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
 mouse_filter = 1
 texture = ExtResource("3_kldst")
 patch_margin_left = 12
@@ -244,11 +271,16 @@ text = "Tell me
 "
 flat = true
 
-[node name="PlayerStats" type="Panel" parent="." unique_id=938637334]
+[node name="PlayerStats" type="NinePatchRect" parent="." unique_id=1163065888]
 layout_mode = 0
 offset_top = 424.0
 offset_right = 240.0
 offset_bottom = 648.0
+texture = ExtResource("2_b2bpf")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="HealthLabel" type="Label" parent="PlayerStats" unique_id=1207754543]
 layout_mode = 0
