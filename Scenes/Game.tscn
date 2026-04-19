@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://Scripts/DayManager.gd" id="2_xkndl"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="5_fgofq"]
+[ext_resource type="Texture2D" uid="uid://bakcmi0eq5a76" path="res://RetroWindowsGUI/Windows_Inner_Frame_Inverted.png" id="6_2irst"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kldst"]
 bg_color = Color(1, 1, 1, 1)
@@ -53,9 +54,10 @@ corner_detail = 1
 
 [node name="Control" type="Control" unique_id=1345712339]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.136
+anchor_bottom = 1.409
+offset_right = -331.0
+offset_bottom = -560.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wbfu4")
@@ -77,8 +79,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 61.0
 offset_top = 29.0
-offset_right = -22.0
-offset_bottom = -15.0
+offset_right = -59.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7lihs")
@@ -90,10 +92,10 @@ patch_margin_bottom = 12
 
 [node name="ButtonPanel" type="NinePatchRect" parent="Background" unique_id=966110224]
 layout_mode = 1
-offset_left = 15.0
-offset_top = 225.0
-offset_right = 255.0
-offset_bottom = 341.0
+offset_left = 21.0
+offset_top = 133.0
+offset_right = 261.0
+offset_bottom = 249.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -177,25 +179,46 @@ flat = true
 
 [node name="ChatManager" parent="Background" unique_id=1942021245 instance=ExtResource("2_u44n3")]
 unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 294.0
+offset_top = 94.0
+offset_right = 857.0
+offset_bottom = 424.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Background/ChatManager" unique_id=1908377173]
 layout_mode = 1
-offset_left = 269.0
-offset_top = 30.0
-offset_right = -606.0
-offset_bottom = -279.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -11.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_2irst")
+region_rect = Rect2(0, -1, 16, 17.152945)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 
 [node name="DialoguePanel" type="VBoxContainer" parent="Background/ChatManager" unique_id=1209100797]
 layout_mode = 0
-offset_left = -14.0
-offset_top = 29.0
-offset_right = 249.0
-offset_bottom = 342.0
+offset_left = 36.0
+offset_top = 33.0
+offset_right = 299.0
+offset_bottom = 346.0
 
 [node name="RobotArea" type="NinePatchRect" parent="Background" unique_id=1551997195]
 layout_mode = 0
-offset_left = 769.0
-offset_top = 40.0
-offset_right = 1043.0
-offset_bottom = 348.0
+offset_left = 871.0
+offset_top = 50.0
+offset_right = 1201.0
+offset_bottom = 388.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -213,10 +236,10 @@ expand_mode = 1
 
 [node name="InfoPanel" type="NinePatchRect" parent="Background" unique_id=356643237]
 layout_mode = 0
-offset_left = 695.0
-offset_top = 374.0
-offset_right = 1043.0
-offset_bottom = 587.0
+offset_left = 781.0
+offset_top = 428.0
+offset_right = 1129.0
+offset_bottom = 641.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
