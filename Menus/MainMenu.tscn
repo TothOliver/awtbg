@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dvq7hwhliod3q"]
 
-[ext_resource type="Script" uid="uid://d3c64iask50su" path="res://Menus/main_menu.gd" id="1_r8dbq"]
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_r8dbq"]
 [ext_resource type="Texture2D" uid="uid://b6ousc5vgvsd8" path="res://RetroWindowsGUI/Window_Header.png" id="2_n6o36"]
-[ext_resource type="FontFile" uid="uid://c2bw4bubfo00s" path="res://Menus/GrapeSoda.ttf" id="3_7ihqj"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="4_0xbyl"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="4_5ncg0"]
 [ext_resource type="FontFile" uid="uid://c6o5ffwbjbf4n" path="res://RetroWindowsGUI/M 8pt.ttf" id="5_5ncg0"]
@@ -107,7 +106,7 @@ You have been assigned to examine a series of artificial intelligences scheduled
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Option1" type="NinePatchRect" parent="Background" unique_id=1631952192]
+[node name="Start" type="NinePatchRect" parent="Background" unique_id=1631952192]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 232.0
@@ -122,7 +121,7 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="StartButton" type="Button" parent="Background/Option1" unique_id=11416290]
+[node name="StartButton" type="Button" parent="Background/Start" unique_id=11416290]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 2.0
@@ -130,12 +129,20 @@ offset_right = 330.0
 offset_bottom = 71.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_5ncg0")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_n6o36")
 text = "Start Evaluation"
+flat = true
 
 [node name="Title" type="Label" parent="." unique_id=667048265]
 layout_mode = 1
@@ -157,24 +164,6 @@ theme_override_font_sizes/font_size = 100
 text = "Aparatus Inspector"
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="." unique_id=11416290]
-layout_mode = 0
-offset_left = 488.0
-offset_top = 865.0
-offset_right = 810.0
-offset_bottom = 934.0
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_0xbyl")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_kmrqt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3g7qx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_r8dbq")
-text = "Start Evaluation"
-icon = ExtResource("4_5ncg0")
-
 [node name="QuitButton" type="Button" parent="." unique_id=196206400]
 layout_mode = 0
 offset_left = 231.0
@@ -192,5 +181,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3g7qx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r8dbq")
 text = "X"
 
-[connection signal="pressed" from="Background/Option1/StartButton" to="." method="_on_start_pressed"]
+[connection signal="button_down" from="Background/Start/StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="button_up" from="Background/Start/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="mouse_entered" from="Background/Start/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="Background/Start/StartButton" to="." method="_on_start_button_mouse_exited"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_pressed"]
