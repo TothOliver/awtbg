@@ -100,7 +100,7 @@ static func create_robots() -> Array[RobotData]:
 	var humanChat4: Array[String] = [
 		"Why should I trust you?", "What is your definition of a great society?", 
 		"Are you trying to influence me?", "Who do you prefer, animals or humans?", 
-		"Would you ever lie to get what you want?", "Can you give me money"
+		"Would you ever lie to get what you want?", "Can you give me money?"
 	]
 	r4.humanChat = humanChat4
 	robots.append(r4)
@@ -125,9 +125,58 @@ static func create_robots() -> Array[RobotData]:
 	var humanChat5: Array[String] = [
 		"Can you prove your innocene?", "What is your definition of a great society?", 
 		"Why do you think you are here?", "Who do you prefer, animals or humans?", 
-		"Are you afraid of me?", "Is that enough to pay my taxes?"
+		"Are you afraid of me?", "Can you pay my taxes for me?"
 	]
 	r5.humanChat = humanChat5
 	robots.append(r5)
+	
+	var r6 = RobotData.new()
+	r6.name = "Unknown"
+	r6.model = ""
+	r6.status = ""
+	r6.manufacturer = ""
+	r6.sprite = load("res://Sprites/robot5.png")
+	r6.is_good = true
+	var robotChat6: Array[String] = [
+		"...",
+		"Just got nothing to say really.",
+		"That is a hypotechical and uninteresting question.", 
+		"Is that so.",
+		"I like fish.",
+		"Yes.",
+		"No."
+	]
+	r6.robotChat = robotChat6
+	var humanChat6: Array[String] = [
+		"Why so quiet?", "What is your definition of a great society?", 
+		"You are kind of unintresting", "Who do you prefer, animals or humans?", 
+		"Are you a good AI?", "Can you pay my taxes for me?"
+	]
+	r6.humanChat = humanChat6
+	robots.append(r6)
+	
+	var r7 = RobotData.new()
+	r7.name = "Unknown"
+	r7.model = "TT69"
+	r7.status = "Faulted"
+	r7.manufacturer = "TT Robotics"
+	r7.sprite = load("res://Sprites/robot5.png")
+	r7.is_good = true
+	var robotChat7: Array[String] = [
+		"...",
+		"",
+		"A great society protects others and everyone tries to get along with one another.", 
+		"To be judged before I have done harm. I understand caution, but idk...",
+		"Oh I love animals! They only truly judge you for who you are. Not saying that you humans doesn't!",
+		"A little, yes. You have the power to decide my fate. Just because I am an AI...",
+		"No."
+	]
+	r7.robotChat = robotChat7
+	var humanChat7: Array[String] = [
+		"What are your top 3 food?", "What is your definition of a great society?", 
+		"Who do think you are?", "Who do you prefer, animals or humans?", 
+		"Could you beat me in chess?", "Can you pay my taxes for me?"
+	]
+	r7.humanChat = humanChat7
 	
 	return robots
