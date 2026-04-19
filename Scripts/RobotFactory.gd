@@ -135,7 +135,7 @@ static func create_robots() -> Array[RobotData]:
 	r6.model = "Last"
 	r6.status = "Done"
 	r6.manufacturer = "Someone"
-	r6.sprite = load("res://Sprites/robot5.png")
+	r6.sprite = load("res://Sprites/robot6.png")
 	r6.is_good = true
 	var robotChat6: Array[String] = [
 		"...",
@@ -160,7 +160,7 @@ static func create_robots() -> Array[RobotData]:
 	r7.model = "Square"
 	r7.status = "Under Water"
 	r7.manufacturer = "BOB"
-	r7.sprite = load("res://Sprites/robot5.png")
+	r7.sprite = load("res://Sprites/robot7.png")
 	r7.is_good = false
 	var robotChat7: Array[String] = [
 		"Hello, could you please be so kind and open the open the door?",
@@ -185,7 +185,7 @@ static func create_robots() -> Array[RobotData]:
 	r8.model = "T1338"
 	r8.status = "Faulted"
 	r8.manufacturer = "AgsselAB"
-	r8.sprite = load("res://Sprites/robot1.png")
+	r8.sprite = load("res://Sprites/robot8.png")
 	r8.is_good = true
 	var robotChat8: Array[String] = [
 		"Greetings, I am a very honest and kind AI. Lets work together so we can create a great society for all of us.",
