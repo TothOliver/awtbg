@@ -22,7 +22,8 @@ var pressed_tex = preload("res://RetroWindowsGUI/Windows_Button_Pressed.png")
 
 var robots: Array[RobotData] = []
 var current_robot: RobotData
-var is_waiting_for_replay := false;
+var is_waiting_for_replay = false
+var final_message = false
 
 func _ready():
 	robots = RobotFactory.create_robots()
@@ -31,6 +32,7 @@ func _ready():
 
 func spawn_next_robot():
 	chat_manager.clear_messages()
+	final_message = false
 	
 	if robots.size() > 0:
 		current_robot = pick_next_robot()
@@ -87,9 +89,16 @@ func handle_chat_choice(player_text: String, robot_reply: String):
 	if chat_manager.chatCount == 6:
 		chat_button1.text = ""
 		chat_button2.text = ""
+		await get_tree().create_timer(1.0).timeout
+		handle_last_terminal_chat()
 	else:
 		chat_button1.text = current_robot.humanChat[chat_manager.chatCount]
 		chat_button2.text = current_robot.humanChat[chat_manager.chatCount+1]
+
+func handle_last_terminal_chat():
+	if final_message == false:
+		chat_manager.add_message("Inspectation complete. Please issue your final judgment for this AI.", "Terminal: ")
+		final_message = true
 
 func _on_good_button_button_down() -> void:
 	%Good.texture = pressed_tex
