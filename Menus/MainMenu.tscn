@@ -123,7 +123,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_5ncg0")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 19
 text = "Hello Inspector
 You have been assigned to examine a series of artificial intelligences scheduled for final review. Each subject will be observed through direct conversation and evaluated based on its behavior, reasoning, and emotional responses. Your task is to determine whether each AI should be approved for continued existence or marked for termination. Proceed carefully. Some may be dangerous. Some may only appear to be. It is up to you to ensure that only the trustworthy are accepted."
 vertical_alignment = 1
