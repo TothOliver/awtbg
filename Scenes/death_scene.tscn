@@ -63,6 +63,7 @@ theme_override_fonts/font = ExtResource("3_cljc8")
 text = "You are incredibly ded"
 
 [node name="StatsLabel" type="Label" parent="NinePatchRect" unique_id=1048202957]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 45.0
 offset_top = 106.0
@@ -71,7 +72,8 @@ offset_bottom = 393.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5wyn5")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect" unique_id=227870550]
+[node name="RestartRect" type="NinePatchRect" parent="NinePatchRect" unique_id=227870550]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 50.0
 offset_top = 434.0
@@ -84,7 +86,8 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Restart" type="Button" parent="NinePatchRect/NinePatchRect" unique_id=1857837205]
+[node name="Restart" type="Button" parent="NinePatchRect/RestartRect" unique_id=1857837205]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -101,6 +104,7 @@ text = "Restart"
 flat = true
 
 [node name="QuitRect" type="NinePatchRect" parent="NinePatchRect" unique_id=2085180627]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 301.0
 offset_top = 433.0
@@ -114,6 +118,7 @@ patch_margin_right = 12
 patch_margin_bottom = 12
 
 [node name="Quit" type="Button" parent="NinePatchRect/QuitRect" unique_id=776731121]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -130,13 +135,13 @@ text = "Quit"
 flat = true
 script = SubResource("GDScript_1s3mq")
 
-[connection signal="focus_entered" from="NinePatchRect/NinePatchRect" to="." method="_on_nine_patch_rect_focus_entered"]
-[connection signal="mouse_entered" from="NinePatchRect/NinePatchRect" to="." method="_on_nine_patch_rect_mouse_entered"]
-[connection signal="mouse_exited" from="NinePatchRect/NinePatchRect" to="." method="_on_nine_patch_rect_mouse_exited"]
-[connection signal="button_down" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_button_down"]
-[connection signal="button_up" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_button_up"]
-[connection signal="mouse_entered" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_mouse_entered"]
-[connection signal="mouse_exited" from="NinePatchRect/NinePatchRect/Restart" to="." method="_on_restart_mouse_exited"]
+[connection signal="focus_entered" from="NinePatchRect/RestartRect" to="." method="_on_nine_patch_rect_focus_entered"]
+[connection signal="mouse_entered" from="NinePatchRect/RestartRect" to="." method="_on_nine_patch_rect_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/RestartRect" to="." method="_on_nine_patch_rect_mouse_exited"]
+[connection signal="button_down" from="NinePatchRect/RestartRect/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_up" from="NinePatchRect/RestartRect/Restart" to="." method="_on_restart_button_up"]
+[connection signal="mouse_entered" from="NinePatchRect/RestartRect/Restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/RestartRect/Restart" to="." method="_on_restart_mouse_exited"]
 [connection signal="focus_entered" from="NinePatchRect/QuitRect" to="." method="_on_nine_patch_rect_focus_entered"]
 [connection signal="mouse_exited" from="NinePatchRect/QuitRect" to="." method="_on_quit_rect_mouse_exited"]
 [connection signal="button_down" from="NinePatchRect/QuitRect/Quit" to="." method="_on_quit_button_down"]

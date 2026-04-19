@@ -1,7 +1,7 @@
 extends Control
 
 # This connects the Label node to the script
-@onready var stats_label = $NinePatchRect/StatsLabel
+@onready var stats_label = %StatsLabel
 
 func _ready():
 	# This runs the moment the Death Scene appears on screen
@@ -49,7 +49,7 @@ var hover_tex = preload("res://RetroWindowsGUI/Windows_Button_Focus.png")
 var pressed_tex = preload("res://RetroWindowsGUI/Windows_Button_Pressed.png")
 # In Scripts/deathScene.gd
 func _on_restart_button_down() -> void:
-	$NinePatchRect/NinePatchRect.texture = pressed_tex
+	%RestartRect.texture = pressed_tex
 
 
 func _on_restart_button_up() -> void:
@@ -68,26 +68,26 @@ func _on_restart_button_up() -> void:
 
 
 func _on_restart_mouse_entered() -> void:
-	$NinePatchRect/NinePatchRect.texture = hover_tex
+	%RestartRect.texture = hover_tex
 
 
 func _on_restart_mouse_exited() -> void:
-	$NinePatchRect/NinePatchRect.texture = normal_tex
+	%RestartRect.texture = normal_tex
 
 
 
 
 func _on_quit_mouse_entered() -> void:
-	$NinePatchRect/QuitRect.texture = hover_tex
+	%QuitRect.texture = hover_tex
 
 
 
 func _on_quit_mouse_exited() -> void:
-	$NinePatchRect/QuitRect.texture = normal_tex
+	%QuitRect.texture = normal_tex
 
 
 func _on_quit_button_down() -> void:
-	$NinePatchRect/QuitRect.texture = pressed_tex
+	%QuitRect.texture = pressed_tex
 
 
 func _on_quit_button_up() -> void:

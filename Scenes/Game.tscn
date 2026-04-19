@@ -61,11 +61,13 @@ grow_vertical = 2
 script = ExtResource("1_wbfu4")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=965011394]
-layout_mode = 0
-offset_left = -51.0
-offset_top = -35.0
-offset_right = 1981.0
-offset_bottom = 1109.0
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0.5019608, 0.5019608, 1)
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=506019513]
@@ -86,45 +88,122 @@ patch_margin_top = 26
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="ButtonPanel" type="NinePatchRect" parent="." unique_id=966110224]
+[node name="ButtonPanel" type="NinePatchRect" parent="Background" unique_id=966110224]
 layout_mode = 1
-offset_left = 76.0
-offset_top = 254.0
-offset_right = 316.0
-offset_bottom = 370.0
+offset_left = 15.0
+offset_top = 225.0
+offset_right = 255.0
+offset_bottom = 341.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="ChatManager" parent="." unique_id=1942021245 instance=ExtResource("2_u44n3")]
-layout_mode = 1
-offset_left = 330.0
-offset_top = 59.0
-offset_right = -545.0
-offset_bottom = -250.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/ButtonPanel" unique_id=1375809970]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 30.0
+offset_right = 221.0
+offset_bottom = 98.0
 
-[node name="DialoguePanel" type="VBoxContainer" parent="ChatManager" unique_id=1209100797]
+[node name="Good" type="NinePatchRect" parent="Background/ButtonPanel/VBoxContainer" unique_id=1488520394]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="GoodButton" type="Button" parent="Background/ButtonPanel/VBoxContainer/Good" unique_id=809091503]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 207.0
+offset_bottom = 28.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "ACCEPT"
+flat = true
+
+[node name="Bad" type="NinePatchRect" parent="Background/ButtonPanel/VBoxContainer" unique_id=609471749]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_kldst")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="BadButton" type="Button" parent="Background/ButtonPanel/VBoxContainer/Bad" unique_id=956657047]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 202.0
+offset_bottom = 28.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "EXTERMINATE"
+flat = true
+
+[node name="ChatManager" parent="Background" unique_id=1942021245 instance=ExtResource("2_u44n3")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 269.0
+offset_top = 30.0
+offset_right = -606.0
+offset_bottom = -279.0
+
+[node name="DialoguePanel" type="VBoxContainer" parent="Background/ChatManager" unique_id=1209100797]
 layout_mode = 0
 offset_left = -14.0
 offset_top = 29.0
 offset_right = 249.0
 offset_bottom = 342.0
 
-[node name="RobotArea" type="NinePatchRect" parent="." unique_id=1551997195]
+[node name="RobotArea" type="NinePatchRect" parent="Background" unique_id=1551997195]
 layout_mode = 0
-offset_left = 830.0
-offset_top = 69.0
-offset_right = 1104.0
-offset_bottom = 377.0
+offset_left = 769.0
+offset_top = 40.0
+offset_right = 1043.0
+offset_bottom = 348.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="RobotTexture" type="TextureRect" parent="RobotArea" unique_id=275378146]
+[node name="RobotTexture" type="TextureRect" parent="Background/RobotArea" unique_id=275378146]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 32.0
 offset_top = 24.0
@@ -132,19 +211,19 @@ offset_right = 320.0
 offset_bottom = 280.0
 expand_mode = 1
 
-[node name="InfoPanel" type="NinePatchRect" parent="." unique_id=356643237]
+[node name="InfoPanel" type="NinePatchRect" parent="Background" unique_id=356643237]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 403.0
-offset_right = 1104.0
-offset_bottom = 616.0
+offset_left = 695.0
+offset_top = 374.0
+offset_right = 1043.0
+offset_bottom = 587.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="NamePanel" type="Panel" parent="InfoPanel" unique_id=722898887]
+[node name="NamePanel" type="Panel" parent="Background/InfoPanel" unique_id=722898887]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 24.0
@@ -152,7 +231,7 @@ offset_right = 328.0
 offset_bottom = 56.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
 
-[node name="StaticNameLabel" type="Label" parent="InfoPanel/NamePanel" unique_id=766496088]
+[node name="StaticNameLabel" type="Label" parent="Background/InfoPanel/NamePanel" unique_id=766496088]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 2.0
@@ -162,7 +241,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "Name:"
 
-[node name="NameLabel" type="Label" parent="InfoPanel/NamePanel" unique_id=2063255729]
+[node name="NameLabel" type="Label" parent="Background/InfoPanel/NamePanel" unique_id=2063255729]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 60.0
 offset_top = 5.0
@@ -172,7 +252,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "Johnny"
 
-[node name="ModelPanel" type="Panel" parent="InfoPanel" unique_id=2041964042]
+[node name="ModelPanel" type="Panel" parent="Background/InfoPanel" unique_id=2041964042]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 72.0
@@ -180,7 +260,7 @@ offset_right = 328.0
 offset_bottom = 104.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
 
-[node name="StaticModelLabel" type="Label" parent="InfoPanel/ModelPanel" unique_id=835369628]
+[node name="StaticModelLabel" type="Label" parent="Background/InfoPanel/ModelPanel" unique_id=835369628]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 3.0
@@ -190,7 +270,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "Model:"
 
-[node name="ModelLabel" type="Label" parent="InfoPanel/ModelPanel" unique_id=303726268]
+[node name="ModelLabel" type="Label" parent="Background/InfoPanel/ModelPanel" unique_id=303726268]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 64.0
 offset_top = 4.0
@@ -200,7 +281,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "T6767"
 
-[node name="StatusPanel" type="Panel" parent="InfoPanel" unique_id=1015063183]
+[node name="StatusPanel" type="Panel" parent="Background/InfoPanel" unique_id=1015063183]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 120.0
@@ -208,7 +289,7 @@ offset_right = 328.0
 offset_bottom = 152.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
 
-[node name="StaticStatusLabel" type="Label" parent="InfoPanel/StatusPanel" unique_id=114314964]
+[node name="StaticStatusLabel" type="Label" parent="Background/InfoPanel/StatusPanel" unique_id=114314964]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 3.0
@@ -218,7 +299,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "Status:"
 
-[node name="StatusLabel" type="Label" parent="InfoPanel/StatusPanel" unique_id=958371121]
+[node name="StatusLabel" type="Label" parent="Background/InfoPanel/StatusPanel" unique_id=958371121]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 64.0
 offset_top = 6.0
@@ -228,7 +310,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "Broken"
 
-[node name="ManuPanel" type="Panel" parent="InfoPanel" unique_id=566703700]
+[node name="ManuPanel" type="Panel" parent="Background/InfoPanel" unique_id=566703700]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 168.0
@@ -236,7 +318,7 @@ offset_right = 328.0
 offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kldst")
 
-[node name="StaticManuLabel" type="Label" parent="InfoPanel/ManuPanel" unique_id=1674359586]
+[node name="StaticManuLabel" type="Label" parent="Background/InfoPanel/ManuPanel" unique_id=1674359586]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 2.0
@@ -246,7 +328,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "Manufacturer:"
 
-[node name="ManuLabel" type="Label" parent="InfoPanel/ManuPanel" unique_id=1969003573]
+[node name="ManuLabel" type="Label" parent="Background/InfoPanel/ManuPanel" unique_id=1969003573]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 116.0
 offset_top = 5.0
@@ -256,19 +339,20 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
 text = "Axel"
 
-[node name="AnswerPanel" type="NinePatchRect" parent="." unique_id=131471417]
+[node name="AnswerPanel" type="NinePatchRect" parent="Background" unique_id=131471417]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 465.0
-offset_right = 740.0
-offset_bottom = 627.0
+offset_left = 299.0
+offset_top = 436.0
+offset_right = 679.0
+offset_bottom = 598.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Option1" type="NinePatchRect" parent="AnswerPanel" unique_id=1597597857]
+[node name="Option1" type="NinePatchRect" parent="Background/AnswerPanel" unique_id=1597597857]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 10.0
 offset_top = 6.0
@@ -282,7 +366,8 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Button1" type="Button" parent="AnswerPanel/Option1" unique_id=1764300952]
+[node name="Button1" type="Button" parent="Background/AnswerPanel/Option1" unique_id=1764300952]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -313,7 +398,8 @@ text = "Option1"
 flat = true
 autowrap_mode = 3
 
-[node name="Option2" type="NinePatchRect" parent="AnswerPanel" unique_id=737537932]
+[node name="Option2" type="NinePatchRect" parent="Background/AnswerPanel" unique_id=737537932]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 9.0
 offset_top = 86.0
@@ -326,7 +412,8 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="Button2" type="Button" parent="AnswerPanel/Option2" unique_id=1685185524]
+[node name="Button2" type="Button" parent="Background/AnswerPanel/Option2" unique_id=1685185524]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -358,19 +445,19 @@ text = "Option2
 flat = true
 autowrap_mode = 3
 
-[node name="PlayerStats" type="NinePatchRect" parent="." unique_id=1163065888]
+[node name="PlayerStats" type="NinePatchRect" parent="Background" unique_id=1163065888]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 391.0
-offset_right = 316.0
-offset_bottom = 615.0
+offset_left = 15.0
+offset_top = 362.0
+offset_right = 255.0
+offset_bottom = 586.0
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="HealthLabel" type="Label" parent="PlayerStats" unique_id=1207754543]
+[node name="HealthLabel" type="Label" parent="Background/PlayerStats" unique_id=1207754543]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 24.0
@@ -379,7 +466,8 @@ offset_bottom = 59.0
 theme_override_font_sizes/font_size = 18
 text = "Health:"
 
-[node name="HealthBar" type="ProgressBar" parent="PlayerStats" unique_id=1602687783]
+[node name="HealthBar" type="ProgressBar" parent="Background/PlayerStats" unique_id=1602687783]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 16.0
 offset_top = 48.0
@@ -388,7 +476,7 @@ offset_bottom = 75.0
 theme_override_styles/background = SubResource("StyleBoxFlat_bf53h")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fgofq")
 
-[node name="SanityLabel" type="Label" parent="PlayerStats" unique_id=1531452417]
+[node name="SanityLabel" type="Label" parent="Background/PlayerStats" unique_id=1531452417]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 80.0
@@ -397,7 +485,8 @@ offset_bottom = 115.0
 theme_override_font_sizes/font_size = 18
 text = "Sanity:"
 
-[node name="SanityBar" type="ProgressBar" parent="PlayerStats" unique_id=601489287]
+[node name="SanityBar" type="ProgressBar" parent="Background/PlayerStats" unique_id=601489287]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 16.0
 offset_top = 104.0
@@ -406,97 +495,27 @@ offset_bottom = 131.0
 theme_override_styles/background = SubResource("StyleBoxFlat_2irst")
 theme_override_styles/fill = SubResource("StyleBoxFlat_71axn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1375809970]
-layout_mode = 0
-offset_left = 91.0
-offset_top = 284.0
-offset_right = 297.0
-offset_bottom = 352.0
-
-[node name="Good" type="NinePatchRect" parent="VBoxContainer" unique_id=1488520394]
-layout_mode = 2
-mouse_filter = 1
-texture = ExtResource("3_kldst")
-patch_margin_left = 12
-patch_margin_top = 12
-patch_margin_right = 12
-patch_margin_bottom = 12
-
-[node name="GoodButton" type="Button" parent="VBoxContainer/Good" unique_id=809091503]
-layout_mode = 0
-offset_left = 1.0
-offset_top = -3.0
-offset_right = 207.0
-offset_bottom = 28.0
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-text = "ACCEPT"
-flat = true
-
-[node name="Bad" type="NinePatchRect" parent="VBoxContainer" unique_id=609471749]
-layout_mode = 2
-mouse_filter = 1
-texture = ExtResource("3_kldst")
-patch_margin_left = 12
-patch_margin_top = 12
-patch_margin_right = 12
-patch_margin_bottom = 12
-
-[node name="BadButton" type="Button" parent="VBoxContainer/Bad" unique_id=956657047]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -3.0
-offset_right = 202.0
-offset_bottom = 28.0
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-text = "EXTERMINATE"
-flat = true
-
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
+unique_name_in_owner = true
 script = ExtResource("2_xkndl")
 
-[connection signal="button_down" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_button_down"]
-[connection signal="button_up" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_button_up"]
-[connection signal="mouse_entered" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_mouse_entered"]
-[connection signal="mouse_exited" from="AnswerPanel/Option1/Button1" to="." method="_on_button_1_mouse_exited"]
-[connection signal="pressed" from="AnswerPanel/Option1/Button1" to="." method="_on_chat_button1_pressed"]
-[connection signal="button_down" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_button_down"]
-[connection signal="button_up" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_button_up"]
-[connection signal="mouse_entered" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_mouse_entered"]
-[connection signal="mouse_exited" from="AnswerPanel/Option2/Button2" to="." method="_on_button_2_mouse_exited"]
-[connection signal="pressed" from="AnswerPanel/Option2/Button2" to="." method="_on_chat_button2_pressed"]
-[connection signal="button_down" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_down"]
-[connection signal="button_up" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/Good/GoodButton" to="." method="_on_good_button_pressed"]
-[connection signal="button_down" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_button_down"]
-[connection signal="button_up" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_button_up"]
-[connection signal="mouse_entered" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_pressed"]
+[connection signal="button_down" from="Background/ButtonPanel/VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_down"]
+[connection signal="button_up" from="Background/ButtonPanel/VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_up"]
+[connection signal="mouse_entered" from="Background/ButtonPanel/VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_entered"]
+[connection signal="mouse_exited" from="Background/ButtonPanel/VBoxContainer/Good/GoodButton" to="." method="_on_good_button_mouse_exited"]
+[connection signal="pressed" from="Background/ButtonPanel/VBoxContainer/Good/GoodButton" to="." method="_on_good_button_pressed"]
+[connection signal="button_down" from="Background/ButtonPanel/VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_button_down"]
+[connection signal="button_up" from="Background/ButtonPanel/VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_button_up"]
+[connection signal="mouse_entered" from="Background/ButtonPanel/VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_mouse_entered"]
+[connection signal="mouse_exited" from="Background/ButtonPanel/VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_mouse_exited"]
+[connection signal="pressed" from="Background/ButtonPanel/VBoxContainer/Bad/BadButton" to="." method="_on_bad_button_pressed"]
+[connection signal="button_down" from="Background/AnswerPanel/Option1/Button1" to="." method="_on_button_1_button_down"]
+[connection signal="button_up" from="Background/AnswerPanel/Option1/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="mouse_entered" from="Background/AnswerPanel/Option1/Button1" to="." method="_on_button_1_mouse_entered"]
+[connection signal="mouse_exited" from="Background/AnswerPanel/Option1/Button1" to="." method="_on_button_1_mouse_exited"]
+[connection signal="pressed" from="Background/AnswerPanel/Option1/Button1" to="." method="_on_chat_button1_pressed"]
+[connection signal="button_down" from="Background/AnswerPanel/Option2/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_up" from="Background/AnswerPanel/Option2/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="mouse_entered" from="Background/AnswerPanel/Option2/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="Background/AnswerPanel/Option2/Button2" to="." method="_on_button_2_mouse_exited"]
+[connection signal="pressed" from="Background/AnswerPanel/Option2/Button2" to="." method="_on_chat_button2_pressed"]

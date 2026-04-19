@@ -1,19 +1,19 @@
 extends Control
 
-@onready var robot_texture = $RobotArea/RobotTexture
-@onready var good_button = $VBoxContainer/Good/GoodButton
-@onready var bad_button = $VBoxContainer/Bad/BadButton
-@onready var chat_button1 = $AnswerPanel/Option1/Button1
-@onready var chat_button2 = $AnswerPanel/Option2/Button2
-@onready var day_manager = $DayManager
-@onready var chat_manager = $ChatManager
-@onready var health_bar = $PlayerStats/HealthBar
+@onready var robot_texture = %RobotTexture
+@onready var good_button = %GoodButton
+@onready var bad_button = %BadButton
+@onready var chat_button1 = %Button1
+@onready var chat_button2 = %Button2
+@onready var day_manager = %DayManager
+@onready var chat_manager = %ChatManager
+@onready var health_bar = %HealthBar
 
 #info tab stuff
-@onready var nameInfo = $InfoPanel/NamePanel/NameLabel
-@onready var modelInfo = $InfoPanel/ModelPanel/ModelLabel
-@onready var statusInfo = $InfoPanel/StatusPanel/StatusLabel
-@onready var manuInfo = $InfoPanel/ManuPanel/ManuLabel
+@onready var nameInfo = %NameLabel
+@onready var modelInfo = %ModelLabel
+@onready var statusInfo = %StatusLabel
+@onready var manuInfo = %ManuLabel
 
 # --- FLYTTADE VARIABLAR HIT UPP ---
 var normal_tex = preload("res://RetroWindowsGUI/Windows_Button.png")
@@ -92,26 +92,26 @@ func handle_chat_choice(player_text: String, robot_reply: String):
 		chat_button2.text = current_robot.humanChat[chat_manager.chatCount+1]
 
 func _on_good_button_button_down() -> void:
-	$VBoxContainer/Good.texture = pressed_tex
+	%Good.texture = pressed_tex
 
 func _on_good_button_button_up() -> void:
-	$VBoxContainer/Good.texture = normal_tex
+	%Good.texture = normal_tex
 	print("Button Pressed: GOOD (Pass)")
 	if current_robot:
 		day_manager.process_robot(current_robot.is_good, true)
 		spawn_next_robot()
 
 func _on_good_button_mouse_entered() -> void:
-	$VBoxContainer/Good.texture = hover_tex
+	%Good.texture = hover_tex
 
 func _on_good_button_mouse_exited() -> void:
-	$VBoxContainer/Good.texture = normal_tex
+	%Good.texture = normal_tex
 
 func _on_bad_button_button_down() -> void:
-	$VBoxContainer/Bad.texture = pressed_tex
+	%Bad.texture = pressed_tex
 
 func _on_bad_button_button_up() -> void:
-	$VBoxContainer/Bad.texture = normal_tex
+	%Bad.texture = normal_tex
 	print("Button Pressed: BAD (Reject)")
 	if current_robot:
 		# Sending 'false' because the player is NOT passing the robot
@@ -119,37 +119,37 @@ func _on_bad_button_button_up() -> void:
 		spawn_next_robot()
 
 func _on_bad_button_mouse_entered() -> void:
-	$VBoxContainer/Bad.texture = hover_tex
+	%Bad.texture = hover_tex
 
 func _on_bad_button_mouse_exited() -> void:
-	$VBoxContainer/Bad.texture = normal_tex
+	%Bad.texture = normal_tex
 
 func _on_button_1_button_down() -> void:
-	$AnswerPanel/Option1.texture = pressed_tex
+	%Option1.texture = pressed_tex
 
 func _on_button_1_button_up() -> void:
 	if chat_manager.chatCount > 5:
 		return
-	$AnswerPanel/Option1.texture = normal_tex
+	%Option1.texture = normal_tex
 	handle_chat_choice(current_robot.humanChat[chat_manager.chatCount], current_robot.robotChat[chat_manager.chatCount+1])
 
 func _on_button_2_button_up() -> void:
 	if chat_manager.chatCount > 5:
 		return
-	$AnswerPanel/Option2.texture = normal_tex
+	%Option2.texture = normal_tex
 	handle_chat_choice(current_robot.humanChat[chat_manager.chatCount+1], current_robot.robotChat[chat_manager.chatCount+2])
 
 func _on_button_1_mouse_entered() -> void:
-	$AnswerPanel/Option1.texture = hover_tex
+	%Option1.texture = hover_tex
 
 func _on_button_1_mouse_exited() -> void:
-	$AnswerPanel/Option1.texture = normal_tex
+	%Option1.texture = normal_tex
 
 func _on_button_2_button_down() -> void:
-	$AnswerPanel/Option2.texture = pressed_tex
+	%Option2.texture = pressed_tex
 
 func _on_button_2_mouse_entered() -> void:
-	$AnswerPanel/Option2.texture = hover_tex
+	%Option2.texture = hover_tex
 
 func _on_button_2_mouse_exited() -> void:
-	$AnswerPanel/Option2.texture = normal_tex
+	%Option2.texture = normal_tex
