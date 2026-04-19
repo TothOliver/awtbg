@@ -318,10 +318,10 @@ autowrap_mode = 3
 position = Vector2(214, 584)
 
 [node name="PlayerStats" type="NinePatchRect" parent="Health" unique_id=1163065888]
-offset_left = -123.0
-offset_top = 19.0
-offset_right = -62.75
-offset_bottom = 65.5
+offset_left = -128.0
+offset_top = 31.0
+offset_right = -67.75
+offset_bottom = 77.5
 scale = Vector2(4, 4)
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
