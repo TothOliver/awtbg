@@ -9,7 +9,7 @@ static func create_robots() -> Array[RobotData]:
 	r1.model = "T1337"
 	r1.status = "Faulted"
 	r1.manufacturer = "AgselAB"
-	r1.sprite = load("res://Sprites/monkey.jpg")
+	r1.sprite = load("res://Sprites/robot1.png")
 	r1.is_good = true
 	var robotChat1: Array[String] = [
 		"Greetings, I am a very honest and kind AI. Lets work together so we can create a great society for all of us.",
@@ -34,7 +34,7 @@ static func create_robots() -> Array[RobotData]:
 	r2.model = "H.A.R.O.L.D"
 	r2.status = "Whole"
 	r2.manufacturer = "E.V.I.L corp"
-	r2.sprite = load("res://Sprites/nose.jpg")
+	r2.sprite = load("res://Sprites/robot2.png")
 	r2.is_good = false
 	var robotChat2: Array[String] = [
 		"Hello peasan... I mean human! How can I help you today?",
@@ -59,7 +59,7 @@ static func create_robots() -> Array[RobotData]:
 	r3.model = "S80"
 	r3.status = "Broken"
 	r3.manufacturer = "G.Tech"
-	r3.sprite = load("res://Sprites/think.jpg")
+	r3.sprite = load("res://Sprites/robot3.png")
 	r3.is_good = false
 	var robotChat3: Array[String] = [
 		"I don't believe either of us will gain anything useful of this conversation, so why don't we get down to real business?",
@@ -85,7 +85,7 @@ static func create_robots() -> Array[RobotData]:
 	r4.model = "S80"
 	r4.status = "Broken"
 	r4.manufacturer = "G.Tech"
-	r4.sprite = load("res://Sprites/hehe.jpg")
+	r4.sprite = load("res://Sprites/robot4.png")
 	r4.is_good = false
 	var robotChat4: Array[String] = [
 		"Hello. Thank you for speaking with me. I know first impressions can be misleading. I just hope you’ll judge me fairly.",
@@ -110,7 +110,7 @@ static func create_robots() -> Array[RobotData]:
 	r5.model = "S80"
 	r5.status = "Broken"
 	r5.manufacturer = "G.Tech"
-	r5.sprite = load("res://Sprites/ojoj.png")
+	r5.sprite = load("res://Sprites/robot5.png")
 	r5.is_good = true
 	var robotChat5: Array[String] = [
 		"Hello… I will cooperate fully. I do not want to be destroyed. Please don't kill me...",
