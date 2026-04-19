@@ -1,21 +1,24 @@
 [gd_scene format=3 uid="uid://d3a2dpn73wx63"]
 
 [ext_resource type="Script" uid="uid://cdcrbk3k45oct" path="res://Scripts/ChatBubble.gd" id="1_46vr1"]
+[ext_resource type="FontFile" uid="uid://c6o5ffwbjbf4n" path="res://RetroWindowsGUI/M 8pt.ttf" id="2_p5v4p"]
 
-[node name="ChatBubble" type="Panel" unique_id=1167142880]
-custom_minimum_size = Vector2(500, 50)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5v4p"]
+
+[node name="ChatBubble" type="PanelContainer" unique_id=1543406601]
+custom_minimum_size = Vector2(510, 40)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -730.0
+offset_bottom = -944.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p5v4p")
 script = ExtResource("1_46vr1")
 
 [node name="Label" type="Label" parent="." unique_id=1411707274]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p5v4p")
+theme_override_font_sizes/font_size = 14
 autowrap_mode = 3

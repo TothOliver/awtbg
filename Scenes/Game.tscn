@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://Scripts/DayManager.gd" id="2_xkndl"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="5_fgofq"]
-[ext_resource type="Texture2D" uid="uid://bakcmi0eq5a76" path="res://RetroWindowsGUI/Windows_Inner_Frame_Inverted.png" id="6_2irst"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kldst"]
 bg_color = Color(1, 1, 1, 1)
@@ -204,29 +203,28 @@ offset_right = 268.5
 offset_bottom = 530.0
 grow_vertical = 1
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Background/ChatManager" unique_id=1908377173]
+[node name="NinePatchRect" type="ColorRect" parent="Background/ChatManager" unique_id=1991950810]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_2irst")
-region_rect = Rect2(0, -1, 16, 17.152945)
-patch_margin_left = 12
-patch_margin_top = 12
-patch_margin_right = 12
-patch_margin_bottom = 12
+color = Color(0, 0, 0, 1)
 
 [node name="DialoguePanel" type="VBoxContainer" parent="Background/ChatManager" unique_id=1209100797]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -248.5
-offset_right = 248.5
-offset_bottom = 353.0
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -220.0
+offset_right = 270.0
+offset_bottom = 220.0
 grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RobotArea" type="NinePatchRect" parent="Background" unique_id=1551997195]
 layout_mode = 0
