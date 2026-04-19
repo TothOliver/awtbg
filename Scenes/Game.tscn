@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="5_fgofq"]
 [ext_resource type="Texture2D" uid="uid://ocdme38bcgux" path="res://RetroWindowsGUI/ExitButton.png" id="7_2irst"]
+[ext_resource type="FontFile" uid="uid://c6o5ffwbjbf4n" path="res://RetroWindowsGUI/M 8pt.ttf" id="9_71axn"]
 [ext_resource type="PackedScene" uid="uid://b4rqpuli5bw6i" path="res://Scenes/bg_music.tscn" id="9_bf53h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dahhg"]
@@ -135,7 +136,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 33.0
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -161,10 +165,10 @@ script = ExtResource("2_xkndl")
 [node name="StartQuit" type="NinePatchRect" parent="." unique_id=191348600]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1175.0
-offset_top = 54.0
-offset_right = 1189.8
-offset_bottom = 68.0
+offset_left = 1172.0
+offset_top = 52.0
+offset_right = 1187.0
+offset_bottom = 66.0
 scale = Vector2(4, 4)
 size_flags_stretch_ratio = 0.0
 mouse_filter = 1
@@ -199,10 +203,10 @@ texture = ExtResource("7_2irst")
 position = Vector2(592, 594)
 
 [node name="AnswerPanel" type="NinePatchRect" parent="Option" unique_id=131471417]
-offset_left = -207.0
+offset_left = -208.0
 offset_top = 14.0
-offset_right = -90.5
-offset_bottom = 88.75
+offset_right = -91.5
+offset_bottom = 89.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
@@ -215,10 +219,10 @@ unique_name_in_owner = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -169.0
-offset_top = 29.0
-offset_right = -70.5
-offset_bottom = 55.5
+offset_left = -168.0
+offset_top = 30.0
+offset_right = -69.5
+offset_bottom = 56.5
 grow_horizontal = 2
 scale = Vector2(4, 4)
 size_flags_stretch_ratio = 0.0
@@ -236,10 +240,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -169.0
-offset_top = 148.0
-offset_right = -70.5
-offset_bottom = 174.75
+offset_left = -168.0
+offset_top = 146.0
+offset_right = -69.5
+offset_bottom = 172.75
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(4, 4)
@@ -257,10 +261,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -153.5
-offset_top = 47.5
-offset_right = 189.5
-offset_bottom = 113.5
+offset_left = -147.0
+offset_top = 51.0
+offset_right = 196.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -278,6 +282,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Option1"
 flat = true
 autowrap_mode = 3
@@ -310,6 +315,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Option2
 "
 flat = true
@@ -319,10 +325,10 @@ autowrap_mode = 3
 position = Vector2(214, 584)
 
 [node name="PlayerStats" type="NinePatchRect" parent="Health" unique_id=1163065888]
-offset_left = -128.0
-offset_top = 31.0
-offset_right = -67.75
-offset_bottom = 77.5
+offset_left = -126.0
+offset_top = 32.0
+offset_right = -65.75
+offset_bottom = 78.5
 scale = Vector2(4, 4)
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
@@ -331,41 +337,45 @@ patch_margin_right = 12
 patch_margin_bottom = 12
 
 [node name="HealthLabel" type="Label" parent="Health" unique_id=1207754543]
-offset_left = -107.0
-offset_top = 43.0
-offset_right = 93.0
-offset_bottom = 78.0
-theme_override_font_sizes/font_size = 18
+offset_left = -106.0
+offset_top = 40.0
+offset_right = 94.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("9_71axn")
+theme_override_font_sizes/font_size = 16
 text = "Health:"
 
 [node name="HealthBar" type="ProgressBar" parent="Health" unique_id=1602687783]
 unique_name_in_owner = true
-offset_left = -107.0
-offset_top = 67.0
-offset_right = 97.0
-offset_bottom = 94.0
+offset_left = -106.0
+offset_top = 65.0
+offset_right = 98.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("9_71axn")
 theme_override_styles/background = SubResource("StyleBoxFlat_bf53h")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fgofq")
 
 [node name="SanityLabel" type="Label" parent="Health" unique_id=1531452417]
-offset_left = -107.0
+offset_left = -106.0
 offset_top = 99.0
-offset_right = 93.0
+offset_right = 94.0
 offset_bottom = 134.0
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("9_71axn")
+theme_override_font_sizes/font_size = 16
 text = "Sanity:"
 
 [node name="SanityBar" type="ProgressBar" parent="Health" unique_id=601489287]
 unique_name_in_owner = true
-offset_left = -107.0
-offset_top = 123.0
-offset_right = 97.0
-offset_bottom = 150.0
+offset_left = -106.0
+offset_top = 124.0
+offset_right = 98.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("9_71axn")
 theme_override_styles/background = SubResource("StyleBoxFlat_2irst")
 theme_override_styles/fill = SubResource("StyleBoxFlat_71axn")
 
 [node name="AcceptTerminate" type="Node2D" parent="." unique_id=1629775354]
-position = Vector2(202, 306)
+position = Vector2(203, 306)
 
 [node name="ButtonPanel" type="NinePatchRect" parent="AcceptTerminate" unique_id=966110224]
 offset_left = -119.0
@@ -396,10 +406,10 @@ patch_margin_bottom = 3
 [node name="Bad" type="NinePatchRect" parent="AcceptTerminate/ButtonPanel" unique_id=609471749]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 6.25
-offset_top = 25.25
-offset_right = 55.25
-offset_bottom = 40.75
+offset_left = 6.0
+offset_top = 24.5
+offset_right = 56.0
+offset_bottom = 40.5
 mouse_filter = 1
 texture = ExtResource("3_kldst")
 patch_margin_left = 3
@@ -414,10 +424,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = 60.5
-offset_right = 105.0
-offset_bottom = 91.5
+offset_left = -97.0
+offset_top = 62.0
+offset_right = 103.0
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -435,6 +445,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "ACCEPT"
 flat = true
 
@@ -466,6 +477,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "EXTERMINATE"
 flat = true
 
@@ -473,10 +485,10 @@ flat = true
 position = Vector2(1063, 611)
 
 [node name="InfoPanel" type="NinePatchRect" parent="Model" unique_id=356643237]
-offset_left = -152.0
-offset_top = 27.0
-offset_right = -77.75
-offset_bottom = 86.25
+offset_left = -151.0
+offset_top = 29.0
+offset_right = -76.75
+offset_bottom = 88.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
@@ -499,17 +511,19 @@ offset_right = 263.99988
 offset_bottom = 31.999966
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Name:"
 
 [node name="NameLabel" type="Label" parent="Model/NamePanel" unique_id=2063255729]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 60.0
+offset_left = 77.0
 offset_top = 5.0
-offset_right = 301.0
-offset_bottom = 29.999966
+offset_right = 318.0
+offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Johnny"
 
 [node name="ModelPanel" type="Panel" parent="Model" unique_id=2041964042]
@@ -527,17 +541,19 @@ offset_right = 263.99988
 offset_bottom = 31.99997
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Model:"
 
 [node name="ModelLabel" type="Label" parent="Model/ModelPanel" unique_id=303726268]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 64.0
+offset_left = 80.0
 offset_top = 4.0
-offset_right = 304.0
-offset_bottom = 30.999966
+offset_right = 320.0
+offset_bottom = 34.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "T6767"
 
 [node name="StatusPanel" type="Panel" parent="Model" unique_id=1015063183]
@@ -555,17 +571,19 @@ offset_right = 263.99988
 offset_bottom = 31.99997
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Status:"
 
 [node name="StatusLabel" type="Label" parent="Model/StatusPanel" unique_id=958371121]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 64.0
+offset_left = 88.0
 offset_top = 6.0
-offset_right = 304.0
-offset_bottom = 29.999966
+offset_right = 328.0
+offset_bottom = 36.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Broken"
 
 [node name="ManuPanel" type="Panel" parent="Model" unique_id=566703700]
@@ -583,17 +601,19 @@ offset_right = 263.99988
 offset_bottom = 31.999939
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Manufacturer:"
 
 [node name="ManuLabel" type="Label" parent="Model/ManuPanel" unique_id=1969003573]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 116.0
+offset_left = 166.0
 offset_top = 5.0
-offset_right = 300.0
-offset_bottom = 31.999966
+offset_right = 350.0
+offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_fgofq")
+theme_override_font_sizes/font_size = 24
 text = "Axel"
 
 [node name="Picture" type="Node2D" parent="." unique_id=2014082233]

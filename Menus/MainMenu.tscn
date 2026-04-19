@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b0am33phgml4"]
+[gd_scene format=3 uid="uid://dvq7hwhliod3q"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_r8dbq"]
 [ext_resource type="Texture2D" uid="uid://b6ousc5vgvsd8" path="res://RetroWindowsGUI/Window_Header.png" id="2_n6o36"]
@@ -73,10 +73,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 221.0
-offset_top = 273.0
-offset_right = -856.5
-offset_bottom = -591.0
+offset_left = 224.0
+offset_top = 272.0
+offset_right = -853.5
+offset_bottom = -592.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
@@ -132,10 +132,10 @@ autowrap_mode = 2
 [node name="StartQuit" type="NinePatchRect" parent="." unique_id=1058907255]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 936.0
-offset_top = 300.0
-offset_right = 950.8
-offset_bottom = 314.0
+offset_left = 952.0
+offset_top = 296.0
+offset_right = 966.0
+offset_bottom = 310.0
 scale = Vector2(4, 4)
 size_flags_stretch_ratio = 0.0
 mouse_filter = 1
@@ -169,10 +169,10 @@ texture = ExtResource("6_0xbyl")
 [node name="Start" type="NinePatchRect" parent="." unique_id=1631952192]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 453.0
-offset_top = 774.0
-offset_right = 516.5
-offset_bottom = 790.5
+offset_left = 448.0
+offset_top = 776.0
+offset_right = 512.0
+offset_bottom = 792.5
 scale = Vector2(4, 4)
 size_flags_stretch_ratio = 0.0
 mouse_filter = 1
