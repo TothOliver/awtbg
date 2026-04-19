@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dvq7hwhliod3q"]
 
-[ext_resource type="Script" uid="uid://d3c64iask50su" path="res://Menus/main_menu.gd" id="1_r8dbq"]
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_r8dbq"]
 [ext_resource type="Texture2D" uid="uid://b6ousc5vgvsd8" path="res://RetroWindowsGUI/Window_Header.png" id="2_n6o36"]
-[ext_resource type="FontFile" uid="uid://c2bw4bubfo00s" path="res://Menus/GrapeSoda.ttf" id="3_7ihqj"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="4_0xbyl"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="4_5ncg0"]
 [ext_resource type="FontFile" uid="uid://c6o5ffwbjbf4n" path="res://RetroWindowsGUI/M 8pt.ttf" id="5_5ncg0"]
@@ -156,24 +155,6 @@ theme_override_fonts/font = ExtResource("5_5ncg0")
 theme_override_font_sizes/font_size = 100
 text = "Aparatus Inspector"
 horizontal_alignment = 1
-
-[node name="StartButton" type="Button" parent="." unique_id=11416290]
-layout_mode = 0
-offset_left = 488.0
-offset_top = 865.0
-offset_right = 810.0
-offset_bottom = 934.0
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_0xbyl")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_kmrqt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3g7qx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_r8dbq")
-text = "Start Evaluation"
-icon = ExtResource("4_5ncg0")
 
 [node name="QuitButton" type="Button" parent="." unique_id=196206400]
 layout_mode = 0
