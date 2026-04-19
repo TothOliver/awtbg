@@ -205,7 +205,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_n6o36")
 text = "Start Evaluation"
 flat = true
 
-[node name="AudioStreamPlayer" parent="." unique_id=2125335852 instance=ExtResource("7_1txdl")]
+[node name="bgSFX" parent="." unique_id=2125335852 instance=ExtResource("7_1txdl")]
 
 [connection signal="button_down" from="StartQuit/QuitButton" to="." method="_on_quit_button_button_down"]
 [connection signal="button_up" from="StartQuit/QuitButton" to="." method="_on_quit_button_button_up"]
