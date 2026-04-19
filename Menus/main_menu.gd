@@ -12,11 +12,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
-
-
 func _on_start_button_mouse_entered() -> void:
 	%Start.texture = hover_tex
 
@@ -32,3 +27,20 @@ func _on_start_button_button_down() -> void:
 func _on_start_button_button_up() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	%Start.texture = normal_tex
+
+
+func _on_quit_button_button_down() -> void:
+	%StartQuit.texture = pressed_tex
+
+
+func _on_quit_button_button_up() -> void:
+	%StartQuit.texture = normal_tex
+	get_tree().quit()
+
+
+func _on_quit_button_mouse_entered() -> void:
+	%StartQuit.texture = hover_tex
+
+
+func _on_quit_button_mouse_exited() -> void:
+	%StartQuit.texture = normal_tex
