@@ -44,10 +44,10 @@ color = Color(0, 0.5019608, 0.5019608, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1048104231]
 layout_mode = 0
-offset_left = 219.0
+offset_left = 220.0
 offset_top = 56.0
-offset_right = 335.25
-offset_bottom = 187.75
+offset_right = 336.25
+offset_bottom = 188.0
 scale = Vector2(4, 4)
 texture = ExtResource("2_5wyn5")
 patch_margin_left = 3
@@ -94,10 +94,10 @@ theme_override_fonts/font = ExtResource("3_5wyn5")
 [node name="RestartRect" type="NinePatchRect" parent="." unique_id=227870550]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 269.0
-offset_top = 490.0
-offset_right = 299.5
-offset_bottom = 501.25
+offset_left = 268.0
+offset_top = 491.0
+offset_right = 298.5
+offset_bottom = 502.25
 scale = Vector2(4, 4)
 mouse_filter = 1
 texture = ExtResource("2_1s3mq")
@@ -109,10 +109,10 @@ patch_margin_bottom = 3
 [node name="QuitRect" type="NinePatchRect" parent="." unique_id=2085180627]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 519.0
-offset_top = 489.0
-offset_right = 549.75
-offset_bottom = 500.5
+offset_left = 520.0
+offset_top = 490.0
+offset_right = 550.75
+offset_bottom = 501.5
 scale = Vector2(4, 4)
 mouse_filter = 1
 texture = ExtResource("2_1s3mq")
@@ -124,10 +124,10 @@ patch_margin_bottom = 3
 [node name="Restart" type="Button" parent="." unique_id=1857837205]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 271.0
-offset_top = 495.0
-offset_right = 390.0
-offset_bottom = 529.0
+offset_left = 268.0
+offset_top = 492.0
+offset_right = 387.0
+offset_bottom = 532.0
 theme = SubResource("Theme_1s3mq")
 theme_override_colors/font_color = Color(0.003921569, 0.003921569, 0.003921569, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -135,6 +135,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_cljc8")
+theme_override_font_sizes/font_size = 16
 text = "Restart"
 flat = true
 
