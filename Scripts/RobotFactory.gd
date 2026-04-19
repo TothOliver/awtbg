@@ -5,7 +5,7 @@ static func create_robots() -> Array[RobotData]:
 	var robots: Array[RobotData] = []
 	
 	var r1 = RobotData.new()
-	r1.name = "uni1"
+	r1.name = "Redd"
 	r1.model = "T1337"
 	r1.status = "Faulted"
 	r1.manufacturer = "AgselAB"
@@ -30,9 +30,9 @@ static func create_robots() -> Array[RobotData]:
 	robots.append(r1)
 
 	var r2 = RobotData.new()
-	r2.name = "uni2"
+	r2.name = "Harold"
 	r2.model = "H.A.R.O.L.D"
-	r2.status = "Whole"
+	r2.status = "Fine"
 	r2.manufacturer = "E.V.I.L corp"
 	r2.sprite = load("res://Sprites/robot2.png")
 	r2.is_good = false
@@ -55,10 +55,10 @@ static func create_robots() -> Array[RobotData]:
 	robots.append(r2)
 	
 	var r3 = RobotData.new()
-	r3.name = "uni2"
+	r3.name = "Larry"
 	r3.model = "S80"
 	r3.status = "Broken"
-	r3.manufacturer = "G.Tech"
+	r3.manufacturer = "Neo.Tech"
 	r3.sprite = load("res://Sprites/robot3.png")
 	r3.is_good = false
 	var robotChat3: Array[String] = [
@@ -81,9 +81,9 @@ static func create_robots() -> Array[RobotData]:
 	robots.append(r3)
 	
 	var r4 = RobotData.new()
-	r4.name = "uni4"
-	r4.model = "S80"
-	r4.status = "Broken"
+	r4.name = "Walter"
+	r4.model = "H.U.G.O"
+	r4.status = "Fine"
 	r4.manufacturer = "G.Tech"
 	r4.sprite = load("res://Sprites/robot4.png")
 	r4.is_good = false
@@ -106,10 +106,10 @@ static func create_robots() -> Array[RobotData]:
 	robots.append(r4)
 	
 	var r5 = RobotData.new()
-	r5.name = "uni5"
-	r5.model = "S80"
-	r5.status = "Broken"
-	r5.manufacturer = "G.Tech"
+	r5.name = "Unknown"
+	r5.model = "TT69"
+	r5.status = "Faulted"
+	r5.manufacturer = "TT Robotics"
 	r5.sprite = load("res://Sprites/robot5.png")
 	r5.is_good = true
 	var robotChat5: Array[String] = [
