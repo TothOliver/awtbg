@@ -21,8 +21,8 @@ GameStats="*uid://blxe4wyof8jen"
 
 [display]
 
-window/size/viewport_width=1500
-window/size/viewport_height=1000
+window/size/viewport_width=1280
+window/size/viewport_height=1024
 
 [physics]
 

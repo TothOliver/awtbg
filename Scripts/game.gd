@@ -134,7 +134,7 @@ func _on_button_1_button_up() -> void:
 	handle_chat_choice(current_robot.humanChat[chat_manager.chatCount], current_robot.robotChat[chat_manager.chatCount+1])
 
 func _on_button_2_button_up() -> void:
-	if chat_manager.chatCount > 5:
+	if chat_manager.chatCount >= 5:
 		return
 	%Option2.texture = normal_tex
 	handle_chat_choice(current_robot.humanChat[chat_manager.chatCount+1], current_robot.robotChat[chat_manager.chatCount+2])
