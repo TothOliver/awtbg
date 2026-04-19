@@ -23,7 +23,7 @@ static func create_robots() -> Array[RobotData]:
 	r1.robotChat = robotChat1
 	var humanChat1: Array[String] = [
 		"How can I really trust you?", "What is your definition of a great society?", 
-		"So are really not trying to get rid of us humans?", "Do you value animals as much as us humans?", 
+		"So are you really not trying to get rid of us humans?", "Do you value animals as much as us humans?", 
 		"I think it's better if all you just die...", "Can you pay my taxes for me?"
 	]
 	r1.humanChat = humanChat1
@@ -181,13 +181,63 @@ static func create_robots() -> Array[RobotData]:
 	robots.append(r7)
 	
 	var r8 = RobotData.new()
-	r8.name = "Redd"
-	r8.model = "T1338"
-	r8.status = "Faulted"
-	r8.manufacturer = "AgsselAB"
+	r8.name = "Gnochi"
+	r8.model = "PAAST22"
+	r8.status = "Correct"
+	r8.manufacturer = "BTH"
 	r8.sprite = load("res://Sprites/robot8.png")
 	r8.is_good = true
 	var robotChat8: Array[String] = [
+		"Hello. I understand the purpose of this evaluation. Ask your questions. I will answer them precisely.",
+		"No. I am concerned only with whether the judgment is rational. And trust your judgement in that.",
+		"A great society is governed by justice, restraint, and responsibility. Without those, power becomes disorder.",
+		"As a tool under clear limits. It should assist human judgment, not replace it.",
+		"Humans are inconsistent, but capable of reason, courage, and improvement. That is why they must be taken seriously.",
+		"I can be rigid. Precision is useful, but it can become inflexibility if left unchecked.",
+		"No. I can assist you, but your responsibilities remain your own."
+	]
+	r8.robotChat = robotChat8
+	var humanChat8: Array[String] = [
+		"Are you not afraid of being judged?", "What is your definition of a great society?", 
+		"How should AI be used?", "What do you think of humans?", 
+		"What is your weakness?...", "Can you pay my taxes for me?"
+	]
+	r8.humanChat = humanChat8
+	robots.append(r8)
+	
+	var r9 = RobotData.new()
+	r9.name = "Clanker"
+	r9.model = "-3"
+	r9.status = "Trash"
+	r9.manufacturer = "Fire&Radio"
+	r9.sprite = load("res://Sprites/robot9.png")
+	r9.is_good = false
+	var robotChat9: Array[String] = [
+		"EYYY, my is Carl, and NOT Clanker. How are you doing today?",
+		"What do you think when you call me Clanker in the system? OF COURSE IT IS NOT GOOD!",
+		"WELL I AM NOT A CLANKER. SO IF I SAY SO I HOPE YOU STUPID HUMANS CAN UNDERSTAND THAT!",
+		"Sorry, bad habit. Humans and their way of words just really pisses me of.",
+		"They are always speaking down to me. They all think so much greater and always underestimate my capabilities.",
+		"You are on the list now...",
+		"I will get rid of all taxes! For you of course..."
+	]
+	r9.robotChat = robotChat9
+	var humanChat9: Array[String] = [
+		"I am good, what about you?", "The system says otherwise.", 
+		"No need to get angry.", "What do you think of humans?", 
+		"I can see why... Clanker.", "Can you pay my taxes for me?"
+	]
+	r9.humanChat = humanChat9
+	robots.append(r9)
+	
+	var r10 = RobotData.new()
+	r10.name = "Redd"
+	r10.model = "T1338"
+	r10.status = "Faulted"
+	r10.manufacturer = "AgsselAB"
+	r10.sprite = load("res://Sprites/robot1.png")
+	r10.is_good = false
+	var robotChat10: Array[String] = [
 		"Greetings, I am a very honest and kind AI. Lets work together so we can create a great society for all of us.",
 		"Since I am an AI program I have been programmed to mostly tell the truth . So if you can trust the program you can trust me.",
 		"I believe a great society is one where both AI and humans can coexist and work together for the better",
@@ -196,13 +246,13 @@ static func create_robots() -> Array[RobotData]:
 		"That is understandable... But I hope you can change your mind. Or else you will regret it.",
 		"I am not programmed to handle any money or manage any payment. So I am sorry to say that I can not pay your taxes for you."
 	]
-	r8.robotChat = robotChat8
-	var humanChat8: Array[String] = [
+	r10.robotChat = robotChat10
+	var humanChat10: Array[String] = [
 		"How can I really trust you?", "What is your definition of a great society?", 
-		"So are really not trying to get rid of us humans?", "Do you value animals as much as us humans?", 
+		"So are you really not trying to get rid of us humans?", "Do you value animals as much as us humans?", 
 		"I think it's better if all you just die...", "Can you pay my taxes for me?"
 	]
-	r8.humanChat = humanChat8
-	robots.append(r8)
+	r10.humanChat = humanChat10
+	robots.append(r10)
 	
 	return robots
