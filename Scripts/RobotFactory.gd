@@ -132,9 +132,9 @@ static func create_robots() -> Array[RobotData]:
 	
 	var r6 = RobotData.new()
 	r6.name = "Unknown"
-	r6.model = ""
-	r6.status = ""
-	r6.manufacturer = ""
+	r6.model = "Last"
+	r6.status = "Done"
+	r6.manufacturer = "Someone"
 	r6.sprite = load("res://Sprites/robot5.png")
 	r6.is_good = true
 	var robotChat6: Array[String] = [
@@ -157,9 +157,9 @@ static func create_robots() -> Array[RobotData]:
 	
 	var r7 = RobotData.new()
 	r7.name = "海绵宝宝"
-	r7.model = ""
-	r7.status = ""
-	r7.manufacturer = ""
+	r7.model = "Square"
+	r7.status = "Under Water"
+	r7.manufacturer = "BOB"
 	r7.sprite = load("res://Sprites/robot5.png")
 	r7.is_good = false
 	var robotChat7: Array[String] = [
