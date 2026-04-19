@@ -2,11 +2,12 @@ extends Control
 
 # This connects the Label node to the script
 @onready var stats_label = %StatsLabel
+@onready var gameOverSFX =$gameOverSFX
 
 func _ready():
 	# This runs the moment the Death Scene appears on screen
 	display_stats()
-
+	gameOverSFX.play()
 
 # Scripts/deathScene.gd
 

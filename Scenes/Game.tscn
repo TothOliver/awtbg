@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bwe8iquljpjp2" path="res://Scripts/DayManager.gd" id="2_xkndl"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="5_fgofq"]
+[ext_resource type="PackedScene" uid="uid://b4rqpuli5bw6i" path="res://Scenes/bg_music.tscn" id="9_bf53h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kldst"]
 bg_color = Color(1, 1, 1, 1)
@@ -547,6 +548,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_71axn")
 [node name="DayManager" type="Node" parent="." unique_id=1392718977]
 unique_name_in_owner = true
 script = ExtResource("2_xkndl")
+
+[node name="BackgroundSFX" parent="." unique_id=2125335852 instance=ExtResource("9_bf53h")]
 
 [connection signal="button_down" from="Background/ButtonPanel/VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_down"]
 [connection signal="button_up" from="Background/ButtonPanel/VBoxContainer/Good/GoodButton" to="." method="_on_good_button_button_up"]

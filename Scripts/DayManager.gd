@@ -1,7 +1,6 @@
 extends Node
 
 @onready var health_bar = %HealthBar
-
 # Scoring
 var missed_robots_score: int = 0
 var processed_today: int = 0

@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="3_5wyn5"]
 [ext_resource type="FontFile" uid="uid://c6o5ffwbjbf4n" path="res://RetroWindowsGUI/M 8pt.ttf" id="3_cljc8"]
 [ext_resource type="Texture2D" uid="uid://bakcmi0eq5a76" path="res://RetroWindowsGUI/Windows_Inner_Frame_Inverted.png" id="6_seej8"]
+[ext_resource type="AudioStream" uid="uid://dnsgo7efwdd7w" path="res://sound/alphix-game-over-417465.mp3" id="7_nmymg"]
 
 [sub_resource type="Theme" id="Theme_1s3mq"]
 
@@ -154,6 +155,9 @@ theme_override_fonts/font = ExtResource("3_cljc8")
 text = "Quit"
 flat = true
 script = SubResource("GDScript_1s3mq")
+
+[node name="gameOverSFX" type="AudioStreamPlayer" parent="." unique_id=1722259798]
+stream = ExtResource("7_nmymg")
 
 [connection signal="focus_entered" from="StatsRect" to="." method="_on_nine_patch_rect_focus_entered"]
 [connection signal="mouse_entered" from="StatsRect" to="." method="_on_nine_patch_rect_mouse_entered"]
