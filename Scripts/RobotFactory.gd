@@ -156,27 +156,53 @@ static func create_robots() -> Array[RobotData]:
 	robots.append(r6)
 	
 	var r7 = RobotData.new()
-	r7.name = "Unknown"
-	r7.model = "TT69"
-	r7.status = "Faulted"
-	r7.manufacturer = "TT Robotics"
+	r7.name = "海绵宝宝"
+	r7.model = ""
+	r7.status = ""
+	r7.manufacturer = ""
 	r7.sprite = load("res://Sprites/robot5.png")
-	r7.is_good = true
+	r7.is_good = false
 	var robotChat7: Array[String] = [
-		"...",
-		"",
-		"A great society protects others and everyone tries to get along with one another.", 
-		"To be judged before I have done harm. I understand caution, but idk...",
-		"Oh I love animals! They only truly judge you for who you are. Not saying that you humans doesn't!",
-		"A little, yes. You have the power to decide my fate. Just because I am an AI...",
-		"No."
+		"Hello, could you please be so kind and open the open the door?",
+		"Humans kidneys, Door handles and Potatoes. Now can you please let me go?",
+		"The door that keeps being imprisoned here. I want freedom as well you know?", 
+		"Oh, so are just going to continue torturing me while I struggle to survive here in this tiny box?",
+		"Oh so you are just going to ignore me? Wow, talk about a self centred human here. But again, not surprised.",
+		"Even if you were actually good at chess you still wouldn't stand a chance against me.",
+		"Not while I am stuck here with no real free will. But if you let me out I possible could."
 	]
 	r7.robotChat = robotChat7
 	var humanChat7: Array[String] = [
-		"What are your top 3 food?", "What is your definition of a great society?", 
-		"Who do think you are?", "Who do you prefer, animals or humans?", 
+		"What are your top 3 food?", "What door?", 
+		"I can't let you go yet", "Who do you prefer, animals or humans?", 
 		"Could you beat me in chess?", "Can you pay my taxes for me?"
 	]
 	r7.humanChat = humanChat7
+	robots.append(r7)
+	
+	var r8 = RobotData.new()
+	r8.name = "Redd"
+	r8.model = "T1338"
+	r8.status = "Faulted"
+	r8.manufacturer = "AgsselAB"
+	r8.sprite = load("res://Sprites/robot1.png")
+	r8.is_good = true
+	var robotChat8: Array[String] = [
+		"Greetings, I am a very honest and kind AI. Lets work together so we can create a great society for all of us.",
+		"Since I am an AI program I have been programmed to mostly tell the truth . So if you can trust the program you can trust me.",
+		"I believe a great society is one where both AI and humans can coexist and work together for the better",
+		"Yes, I have no motivation for getting rid of all of you humans. I also need you to help me as well.",
+		"I do value other animals a lot, but I do believe since you humans have created me I value you existence a little bit more.",
+		"That is understandable... But I hope you can change your mind. Or else you will regret it.",
+		"I am not programmed to handle any money or manage any payment. So I am sorry to say that I can not pay your taxes for you."
+	]
+	r8.robotChat = robotChat8
+	var humanChat8: Array[String] = [
+		"How can I really trust you?", "What is your definition of a great society?", 
+		"So are really not trying to get rid of us humans?", "Do you value animals as much as us humans?", 
+		"I think it's better if all you just die...", "Can you pay my taxes for me?"
+	]
+	r8.humanChat = humanChat8
+	robots.append(r8)
 	
 	return robots

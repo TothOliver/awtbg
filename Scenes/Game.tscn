@@ -128,7 +128,7 @@ anchor_bottom = 0.0
 offset_left = -274.5
 offset_top = 109.0
 offset_right = 275.5
-offset_bottom = 559.0
+offset_bottom = 580.0
 grow_vertical = 1
 
 [node name="NinePatchRect" type="ColorRect" parent="ChatManager" unique_id=1991950810]
@@ -620,10 +620,10 @@ text = "Axel"
 position = Vector2(1070, 183)
 
 [node name="RobotArea" type="NinePatchRect" parent="Picture" unique_id=1551997195]
-offset_left = -130.0
-offset_top = 13.0
-offset_right = -59.0
-offset_bottom = 105.25
+offset_left = -132.0
+offset_top = -6.0
+offset_right = -61.0
+offset_bottom = 86.25
 scale = Vector2(4, 4)
 texture = ExtResource("2_b2bpf")
 patch_margin_left = 12
