@@ -162,3 +162,20 @@ func _on_button_2_mouse_entered() -> void:
 
 func _on_button_2_mouse_exited() -> void:
 	%Option2.texture = normal_tex
+
+
+func _on_quit_button_button_down() -> void:
+	%StartQuit.texture = pressed_tex
+
+
+func _on_quit_button_button_up() -> void:
+	%StartQuit.texture = normal_tex
+	get_tree().quit()
+
+
+func _on_quit_button_mouse_entered() -> void:
+	%StartQuit.texture = hover_tex
+
+
+func _on_quit_button_mouse_exited() -> void:
+	%StartQuit.texture = normal_tex

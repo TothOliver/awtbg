@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="3_kldst"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="5_fgofq"]
 [ext_resource type="Texture2D" uid="uid://ocdme38bcgux" path="res://RetroWindowsGUI/ExitButton.png" id="7_2irst"]
-[ext_resource type="PackedScene" uid="uid://b4rqpuli5bw6i" path="res://Scenes/bg_music.tscn" id="9_bf53h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dahhg"]
 bg_color = Color(0.26666668, 0.62352943, 0, 0)
@@ -619,8 +618,10 @@ offset_right = 99.880005
 offset_bottom = 292.16
 expand_mode = 1
 
-[node name="bgSFX" parent="." unique_id=2125335852 instance=ExtResource("9_bf53h")]
-
+[connection signal="button_down" from="StartQuit/QuitButton" to="." method="_on_quit_button_button_down"]
+[connection signal="button_up" from="StartQuit/QuitButton" to="." method="_on_quit_button_button_up"]
+[connection signal="mouse_entered" from="StartQuit/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="StartQuit/QuitButton" to="." method="_on_quit_button_mouse_exited"]
 [connection signal="button_down" from="Option/Button1" to="." method="_on_button_1_button_down"]
 [connection signal="button_up" from="Option/Button1" to="." method="_on_button_1_button_up"]
 [connection signal="mouse_entered" from="Option/Button1" to="." method="_on_button_1_mouse_entered"]
