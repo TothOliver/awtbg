@@ -1,6 +1,8 @@
 extends Node
 
 @onready var health_bar = %HealthBar
+@onready var sanity_bar = %SanityBar
+
 # Scoring
 var missed_robots_score: int = 0
 var processed_today: int = 0
@@ -11,6 +13,7 @@ var max_days: int = 3
 # BAD AI let in
 var bad_ai_let_in_count: int = 0
 var bad_ai_killed: int = 0
+var sanity: int = 100
 const MAX_ALLOWED_BAD_AI = 2
 
 # Day Configurations: [Quota, Difficulty Level]
@@ -47,6 +50,10 @@ func process_robot(is_good_robot: bool, player_choice_pass: bool):
 	else:
 		if is_good_robot:
 			GameStats.innocent_robots_killed += 1
+			sanity -= 25
+			if sanity == 0:
+				game_over_death()
+			sanity_bar.value = sanity
 			print("Fail! You rejected a perfectly good robot.")
 		else:
 			print("Success! You caught a bad robot.")

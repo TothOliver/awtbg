@@ -8,6 +8,7 @@ extends Control
 @onready var day_manager = %DayManager
 @onready var chat_manager = %ChatManager
 @onready var health_bar = %HealthBar
+@onready var sanity_bar = %SanityBar
 
 #info tab stuff
 @onready var nameInfo = %NameLabel
@@ -29,6 +30,7 @@ func _ready():
 	robots = RobotFactory.create_robots()
 	spawn_next_robot()
 	health_bar.value = 100
+	sanity_bar.value = 100
 
 func spawn_next_robot():
 	chat_manager.clear_messages()
