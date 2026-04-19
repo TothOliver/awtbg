@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvq7hwhliod3q"]
 
-[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_r8dbq"]
+[ext_resource type="Script" uid="uid://d3c64iask50su" path="res://Menus/main_menu.gd" id="1_r8dbq"]
 [ext_resource type="Texture2D" uid="uid://b6ousc5vgvsd8" path="res://RetroWindowsGUI/Window_Header.png" id="2_n6o36"]
 [ext_resource type="FontFile" uid="uid://b8qj364lmpfu8" path="res://RetroWindowsGUI/windows-bold[1].ttf" id="4_0xbyl"]
 [ext_resource type="Texture2D" uid="uid://djm6jm6xr80dg" path="res://RetroWindowsGUI/Windows_Button.png" id="4_5ncg0"]
