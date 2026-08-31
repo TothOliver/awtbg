@@ -499,9 +499,14 @@ func handle_last_terminal_chat():
 		final_message = true
 
 func _on_quit_button_button_up() -> void:
+	if has_node("ExitConfirmOverlay") or get_node_or_null("ExitConfirmOverlay") != null:
+		return
+		
 	var parent_size = size if size != Vector2.ZERO else Vector2(1920, 1080)
 	
 	var overlay = ColorRect.new()
+	overlay.name = "ExitConfirmOverlay"
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	overlay.color = Color(0, 0, 0, 0.4)
 	overlay.size = parent_size
 	overlay.position = Vector2.ZERO
@@ -534,6 +539,23 @@ func _on_quit_button_button_up() -> void:
 	title_label.add_theme_font_size_override("font_size", 12)
 	title_label.position = Vector2(8, 6)
 	title_bar.add_child(title_label)
+	
+	var title_close_btn = Button.new()
+	title_close_btn.name = "CloseButton"
+	title_close_btn.position = Vector2(title_bar.size.x - 24, 4)
+	title_close_btn.size = Vector2(20, 20)
+	title_close_btn.custom_minimum_size = Vector2(20, 20)
+	title_close_btn.icon = preload("res://RetroWindowsGUI/ExitButton.png")
+	title_close_btn.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title_close_btn.expand_icon = true
+	title_close_btn.add_theme_stylebox_override("normal", preload("res://RetroWindowsGUI/StyleBox_Button_Normal.tres"))
+	title_close_btn.add_theme_stylebox_override("hover", preload("res://RetroWindowsGUI/StyleBox_Button_Hover.tres"))
+	title_close_btn.add_theme_stylebox_override("pressed", preload("res://RetroWindowsGUI/StyleBox_Button_Pressed.tres"))
+	title_close_btn.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	title_close_btn.pressed.connect(func():
+		overlay.queue_free()
+	)
+	title_bar.add_child(title_close_btn)
 	
 	var msg_label = Label.new()
 	msg_label.text = "Do you want to quit game?"

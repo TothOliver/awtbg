@@ -1,7 +1,7 @@
 extends Control
 
 @onready var settings_popup = get_node_or_null("SettingsPopup")
-@onready var briefing_popup = get_node_or_null("BriefingPopup")
+@onready var credits_popup = get_node_or_null("CreditsPopup")
 
 func _ready() -> void:
 	# Make sure mouse is visible in the main menu
@@ -31,7 +31,7 @@ func _ready() -> void:
 	# Connect main menu buttons inside MainWindow
 	var continue_btn = get_node_or_null("MainWindow/MenuButtons/ContinueButton")
 	var play_btn = get_node_or_null("MainWindow/MenuButtons/PlayButton")
-	var briefing_btn = get_node_or_null("MainWindow/MenuButtons/BriefingButton")
+	var credits_btn = get_node_or_null("MainWindow/MenuButtons/CreditsButton")
 	var settings_btn = get_node_or_null("MainWindow/MenuButtons/SettingsButton")
 	var quit_btn = get_node_or_null("MainWindow/MenuButtons/QuitButton")
 	var main_close_btn = get_node_or_null("MainWindow/TitleBar/CloseButton")
@@ -47,8 +47,8 @@ func _ready() -> void:
 		play_btn.text = "Start New Inspection Shift"
 		play_btn.pressed.connect(_on_new_game_pressed)
 		
-	if briefing_btn:
-		briefing_btn.pressed.connect(_on_briefing_pressed)
+	if credits_btn:
+		credits_btn.pressed.connect(_on_credits_pressed)
 		
 	if settings_btn:
 		settings_btn.pressed.connect(_on_settings_pressed)
@@ -63,13 +63,13 @@ func _ready() -> void:
 	if close_settings_btn:
 		close_settings_btn.pressed.connect(_on_close_settings_pressed)
 
-	var close_briefing_title = get_node_or_null("BriefingPopup/TitleBar/CloseButton")
-	if close_briefing_title:
-		close_briefing_title.pressed.connect(_on_close_briefing_pressed)
+	var close_credits_title = get_node_or_null("CreditsPopup/TitleBar/CloseButton")
+	if close_credits_title:
+		close_credits_title.pressed.connect(_on_close_credits_pressed)
 		
-	var close_briefing_memo = get_node_or_null("BriefingPopup/CloseMemoButton")
-	if close_briefing_memo:
-		close_briefing_memo.pressed.connect(_on_close_briefing_pressed)
+	var close_credits_btn = get_node_or_null("CreditsPopup/CloseCreditsButton")
+	if close_credits_btn:
+		close_credits_btn.pressed.connect(_on_close_credits_pressed)
 		
 	# Register main menu CRT overlay if exists
 	var crt = get_node_or_null("CRTOverlay")
@@ -126,9 +126,9 @@ func _on_viewport_size_changed() -> void:
 	if settings_popup:
 		settings_popup.position.x = (viewport_size.x - settings_popup.size.x) / 2.0
 		settings_popup.position.y = (viewport_size.y - settings_popup.size.y) / 2.0
-	if briefing_popup:
-		briefing_popup.position.x = (viewport_size.x - briefing_popup.size.x) / 2.0
-		briefing_popup.position.y = (viewport_size.y - briefing_popup.size.y) / 2.0
+	if credits_popup:
+		credits_popup.position.x = (viewport_size.x - credits_popup.size.x) / 2.0
+		credits_popup.position.y = (viewport_size.y - credits_popup.size.y) / 2.0
 	var diff_popup = get_node_or_null("DifficultyPopup")
 	if diff_popup:
 		_center_difficulty_popup(diff_popup)
@@ -143,25 +143,25 @@ func _on_continue_pressed() -> void:
 func _on_new_game_pressed() -> void:
 	_show_difficulty_popup()
 
-func _on_briefing_pressed() -> void:
-	if briefing_popup:
+func _on_credits_pressed() -> void:
+	if credits_popup:
 		var blocker = get_node_or_null("SettingsBlocker")
 		if blocker:
 			blocker.visible = true
 			var blocker_idx = blocker.get_index()
-			move_child(briefing_popup, blocker_idx + 1)
-		briefing_popup.visible = true
+			move_child(credits_popup, blocker_idx + 1)
+		credits_popup.visible = true
 		var viewport_size = get_viewport_rect().size
-		briefing_popup.position.x = (viewport_size.x - briefing_popup.size.x) / 2.0
-		briefing_popup.position.y = (viewport_size.y - briefing_popup.size.y) / 2.0
+		credits_popup.position.x = (viewport_size.x - credits_popup.size.x) / 2.0
+		credits_popup.position.y = (viewport_size.y - credits_popup.size.y) / 2.0
 		
 	var crt = get_node_or_null("CRTOverlay")
 	if crt:
 		move_child(crt, get_child_count() - 1)
 
-func _on_close_briefing_pressed() -> void:
-	if briefing_popup:
-		briefing_popup.visible = false
+func _on_close_credits_pressed() -> void:
+	if credits_popup:
+		credits_popup.visible = false
 		var blocker = get_node_or_null("SettingsBlocker")
 		if blocker:
 			blocker.visible = false
@@ -379,10 +379,10 @@ func _on_quit_pressed() -> void:
 	GameStats.quit_or_menu(get_tree())
 
 func _input(event: InputEvent) -> void:
-	if briefing_popup and briefing_popup.visible:
+	if credits_popup and credits_popup.visible:
 		if event.is_action_pressed("ui_cancel") or (event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE):
 			get_viewport().set_input_as_handled()
-			_on_close_briefing_pressed()
+			_on_close_credits_pressed()
 			return
 
 	var diff_popup = get_node_or_null("DifficultyPopup")

@@ -278,21 +278,6 @@ theme_override_styles/hover = ExtResource("StyleBox_Button_Hover")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
 text = "Start New Shift"
 
-[node name="BriefingButton" type="Button" parent="MainWindow/MenuButtons" unique_id=1221010850]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0.5, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0.5, 1)
-theme_override_fonts/font = ExtResource("5_if7li")
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = ExtResource("StyleBox_Button_Normal")
-theme_override_styles/pressed = ExtResource("StyleBox_Button_Pressed")
-theme_override_styles/hover = ExtResource("StyleBox_Button_Hover")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
-text = "View Protocol Briefing Memo"
-
 [node name="SettingsButton" type="Button" parent="MainWindow/MenuButtons" unique_id=1690107357]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -307,6 +292,21 @@ theme_override_styles/pressed = ExtResource("StyleBox_Button_Pressed")
 theme_override_styles/hover = ExtResource("StyleBox_Button_Hover")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
 text = "System Settings"
+
+[node name="CreditsButton" type="Button" parent="MainWindow/MenuButtons" unique_id=1221010850]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0.5, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.5, 1)
+theme_override_fonts/font = ExtResource("5_if7li")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("StyleBox_Button_Normal")
+theme_override_styles/pressed = ExtResource("StyleBox_Button_Pressed")
+theme_override_styles/hover = ExtResource("StyleBox_Button_Hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
+text = "Credits"
 
 [node name="QuitButton" type="Button" parent="MainWindow/MenuButtons" unique_id=1084707705]
 custom_minimum_size = Vector2(0, 48)
@@ -336,7 +336,7 @@ text = "Aethelgard OS v4.98  |  Core-Quantum Kernel v2.1  |  Security Status: NO
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BriefingPopup" type="NinePatchRect" parent="." unique_id=427743523]
+[node name="CreditsPopup" type="NinePatchRect" parent="." unique_id=427743523]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -356,7 +356,7 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="TitleBar" type="NinePatchRect" parent="BriefingPopup" unique_id=1791475654]
+[node name="TitleBar" type="NinePatchRect" parent="CreditsPopup" unique_id=1791475654]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 6.0
@@ -369,7 +369,7 @@ patch_margin_top = 3
 patch_margin_right = 5
 patch_margin_bottom = 3
 
-[node name="Title" type="Label" parent="BriefingPopup/TitleBar" unique_id=320751602]
+[node name="Title" type="Label" parent="CreditsPopup/TitleBar" unique_id=320751602]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 6.0
@@ -378,9 +378,9 @@ offset_bottom = 26.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_if7li")
 theme_override_font_sizes/font_size = 16
-text = "System Briefing — Protocol Memo #0419.doc"
+text = "Apparatus Inspector — Credits & Acknowledgments"
 
-[node name="CloseButton" type="Button" parent="BriefingPopup/TitleBar" unique_id=2050660107]
+[node name="CloseButton" type="Button" parent="CreditsPopup/TitleBar" unique_id=2050660107]
 layout_mode = 0
 offset_left = 724.0
 offset_top = 4.0
@@ -394,7 +394,7 @@ icon = ExtResource("6_rrcx7")
 icon_alignment = 1
 expand_icon = true
 
-[node name="BriefingPanel" type="Panel" parent="BriefingPopup" unique_id=1673751078]
+[node name="CreditsPanel" type="Panel" parent="CreditsPopup" unique_id=1673751078]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 44.0
@@ -402,7 +402,7 @@ offset_right = 744.0
 offset_bottom = 476.0
 theme_override_styles/panel = ExtResource("StyleBox_Inner_Frame")
 
-[node name="BriefingBg" type="ColorRect" parent="BriefingPopup/BriefingPanel" unique_id=1182254148]
+[node name="CreditsBg" type="ColorRect" parent="CreditsPopup/CreditsPanel" unique_id=1182254148]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -414,40 +414,117 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="BriefingPopup/BriefingPanel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditsPopup/CreditsPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = -12.0
-offset_bottom = -12.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BriefingLabel" type="Label" parent="BriefingPopup/BriefingPanel/ScrollContainer" unique_id=690023277]
-custom_minimum_size = Vector2(690, 0)
+[node name="CreditsLabel" type="RichTextLabel" parent="CreditsPopup/CreditsPanel/ScrollContainer" unique_id=690023277]
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_cmrfp")
-theme_override_font_sizes/font_size = 14
-text = "MEMORANDUM // AETHELGARD MECHANICAL RESEARCH COMPLEX
-TO: Inspector J. Vance (ID: #8804)
-SUBJECT: Synthetic Neural-Net Inspection & Evaluation Protocols
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_cmrfp")
+theme_override_fonts/bold_font = ExtResource("5_if7li")
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 15
+bbcode_enabled = true
+text = "[center][b][font_size=18]APPARATUS INSPECTOR[/font_size][/b]
+[color=#555555]Asset Credits & Attributions[/color]
 
-Hello Inspector,
+[color=#000080]═══════════════════════════════════════════════[/color]
 
-You have been assigned to examine a series of artificial intelligences scheduled for final review in Sector 4 Deep Ward. Each subject will be observed through direct conversation and evaluated based on its behavior, telemetry metrics, and emotional responses.
+[b][font_size=15]3D MODELS & CHARACTERS[/font_size][/b]
+• [b]The Mimic v2[/b] by spade1
+[color=#333399]sketchfab.com/3d-models/themimicv2byspade1-d333c320d7974cffbbb87fe7c09458f6[/color]
 
-Your task is to determine whether each AI should be APPROVED for continued facility service or EXTERMINATED.
+• [b]Old Light Switch[/b]
+[color=#333399]sketchfab.com/3d-models/old-light-switch-688a305c491242ccb6edc11967364838[/color]
 
-Proceed carefully. Some subjects may be dangerous or infected by unauthorized neural code. Some may only appear to be. Ensure that only trustworthy units pass inspection."
-autowrap_mode = 2
 
-[node name="CloseMemoButton" type="Button" parent="BriefingPopup" unique_id=437625788]
+[b][font_size=15]ARCHIVE[/font_size][/b]
+• [b]Metal Shelf File[/b]
+[color=#333399]sketchfab.com/3d-models/metal-shelf-file-14mb-4eee06aa4f194871b5beea430e60dda9[/color]
+
+• [b]File Shelf[/b]
+[color=#333399]sketchfab.com/3d-models/file-shelf-adcc1ab47d7c45ff9d08e0af2815458b[/color]
+
+• [b]Filing Box[/b]
+[color=#333399]sketchfab.com/3d-models/filing-box-53d37f066180402ea4839dc3249e1f50[/color]
+
+• [b]Filing Cabinet (Green)[/b]
+[color=#333399]sketchfab.com/3d-models/filing-cabinet-green-f79a828774b84838b8f9d36d02920361[/color]
+
+• [b]File Folder[/b]
+[color=#333399]sketchfab.com/3d-models/file-folder-aee576b79a354824908e1e44d3d7dd16[/color]
+
+
+[b][font_size=15]OFFICE[/font_size][/b]
+• [b]Floor Tiles 06[/b] — [color=#333399]polyhaven.com/a/floor_tiles_06[/color]
+• [b]White Plaster 02[/b] — [color=#333399]polyhaven.com/a/white_plaster_02[/color]
+• [b]Concrete Layers 02[/b] — [color=#333399]polyhaven.com/a/concrete_layers_02[/color]
+• [b]Coffee Cart 01[/b] — [color=#333399]polyhaven.com/a/CoffeeCart_01[/color]
+
+
+[b][font_size=15]DESK SETUP[/font_size][/b]
+• [b]Metal Office Desk[/b] — [color=#333399]polyhaven.com/a/metal_office_desk[/color]
+• [b]Standing Picture Frame 01[/b] — [color=#333399]polyhaven.com/a/standing_picture_frame_01[/color]
+• [b]Cigarette Pack[/b] — [color=#333399]polyhaven.com/a/cigarette_pack[/color]
+• [b]Cardboard Box 01[/b] — [color=#333399]polyhaven.com/a/cardboard_box_01[/color]
+• [b]Office Notepads[/b] — [color=#333399]polyhaven.com/a/office_notepads[/color]
+• [b]Industrial Pipe Lamp[/b] — [color=#333399]polyhaven.com/a/industrial_pipe_lamp[/color]
+• [b]Stationery Supplies[/b] — [color=#333399]polyhaven.com/a/stationery_supplies[/color]
+• [b]Plastic Monobloc Chair 01[/b] — [color=#333399]polyhaven.com/a/plastic_monobloc_chair_01[/color]
+
+
+[b][font_size=15]OFFICE SHELF[/font_size][/b]
+• [b]Worn Metal Rack[/b] — [color=#333399]polyhaven.com/a/worn_metal_rack[/color]
+• [b]Plastic Container[/b] — [color=#333399]polyhaven.com/a/plastic_container[/color]
+• [b]Small Plastic Torch[/b] — [color=#333399]polyhaven.com/a/small_plastic_torch[/color]
+• [b]Cleaner Tin 01[/b] — [color=#333399]polyhaven.com/a/cleaner_tin_01[/color]
+• [b]Lubricant Spray[/b] — [color=#333399]polyhaven.com/a/lubricant_spray[/color]
+
+
+[b][font_size=15]BREAKER CLOSET[/font_size][/b]
+• [b]Power Box 01[/b] — [color=#333399]polyhaven.com/a/power_box_01[/color]
+• [b]Spray Paint Bottles[/b] — [color=#333399]polyhaven.com/a/spray_paint_bottles[/color]
+• [b]Propane Torch[/b] — [color=#333399]polyhaven.com/a/propane_torch[/color]
+• [b]Watering Can Metal 01[/b] — [color=#333399]polyhaven.com/a/watering_can_metal_01[/color]
+• [b]Plunger[/b] — [color=#333399]polyhaven.com/a/plunger[/color]
+• [b]Trashbag[/b] — [color=#333399]polyhaven.com/a/trashbag[/color]
+• [b]Hand Truck[/b] — [color=#333399]polyhaven.com/a/hand_truck[/color]
+• [b]Leather Cleaner Can[/b] — [color=#333399]polyhaven.com/a/leather_cleaner_can[/color]
+• [b]Multi Cleaner Bottle[/b] — [color=#333399]polyhaven.com/a/multi_cleaner_bottle[/color]
+• [b]All Purpose Cleaner[/b] — [color=#333399]polyhaven.com/a/all_purpose_cleaner[/color]
+• [b]Bleach Bottle[/b] — [color=#333399]polyhaven.com/a/bleach_bottle[/color]
+• [b]Drain Cleaner[/b] — [color=#333399]polyhaven.com/a/drain_cleaner[/color]
+• [b]Dustpan[/b] — [color=#333399]polyhaven.com/a/dustpan[/color]
+• [b]Plastic Broom[/b] — [color=#333399]polyhaven.com/a/plastic_broom[/color]
+• [b]Portable Welding Cart[/b] — [color=#333399]polyhaven.com/a/portable_welding_cart[/color]
+• [b]Multi Cleaner 5 Litre[/b] — [color=#333399]polyhaven.com/a/multi_cleaner_5_litre[/color]
+• [b]Pipe Wrench[/b] — [color=#333399]polyhaven.com/a/pipe_wrench[/color]
+• [b]Vintage Flashlight[/b] — [color=#333399]polyhaven.com/a/vintage_flashlight[/color]
+
+
+[b][font_size=15]SOUND & AUDIO[/font_size][/b]
+• [b]Fluorescent Light Buzz[/b]
+[color=#333399]pixabay.com/sound-effects/search/flourescent%20light%20buzz/[/color]
+
+• [b]Sound Effects by V0iDin6[/b]
+[color=#333399]freesound.org/people/V0iDin6/sounds/829850/[/color]
+
+[color=#000080]═══════════════════════════════════════════════[/color][/center]"
+fit_content = true
+
+[node name="CloseCreditsButton" type="Button" parent="CreditsPopup" unique_id=437625788]
 layout_mode = 0
 offset_left = 280.0
 offset_top = 488.0
@@ -463,7 +540,7 @@ theme_override_styles/normal = ExtResource("StyleBox_Button_Normal")
 theme_override_styles/pressed = ExtResource("StyleBox_Button_Pressed")
 theme_override_styles/hover = ExtResource("StyleBox_Button_Hover")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_icon")
-text = "Acknowledge & Close"
+text = "Close"
 
 [node name="SettingsPopup" type="NinePatchRect" parent="." unique_id=152073289]
 visible = false
